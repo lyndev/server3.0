@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_vip">
+    <resultMap id="bean" type="game.data.bean.q_vipBean" >
+            <result column="q_level" property="q_level" jdbcType="INTEGER" />
+            <result column="q_exp" property="q_exp" jdbcType="INTEGER" />
+            <result column="q_language" property="q_language" jdbcType="INTEGER" />
+            <result column="q_buy_energy" property="q_buy_energy" jdbcType="INTEGER" />
+            <result column="q_buy_skill_point" property="q_buy_skill_point" jdbcType="INTEGER" />
+            <result column="q_skill_point_ceil" property="q_skill_point_ceil" jdbcType="INTEGER" />
+            <result column="q_buy_arena" property="q_buy_arena" jdbcType="INTEGER" />
+            <result column="q_score_misson_num" property="q_score_misson_num" jdbcType="INTEGER" />
+            <result column="q_reset_elite" property="q_reset_elite" jdbcType="INTEGER" />
+            <result column="q_can_raid" property="q_can_raid" jdbcType="INTEGER" />
+            <result column="q_daily_raid_papper" property="q_daily_raid_papper" jdbcType="INTEGER" />
+            <result column="q_coin_change" property="q_coin_change" jdbcType="INTEGER" />
+            <result column="q_expd_rest" property="q_expd_rest" jdbcType="INTEGER" />
+            <result column="q_expd_coin_rate" property="q_expd_coin_rate" jdbcType="INTEGER" />
+            <result column="q_vip_market" property="q_vip_market" jdbcType="VARCHAR" />
+            <result column="q_reward" property="q_reward" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_vip
+    </select>
+</mapper>

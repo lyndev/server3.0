@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 每条客户端消息及其对应的服务端处理器配置文件 -->
+
+<messages>
+    <!-- 登录 -->
+    <msg message="game.message.LoginMessage$ResLoginSuccess" handler="game.testrobot.msghandler.ResLoginSuccessHandler" />
+    <msg message="game.message.LoginMessage$ResLoginFailed" handler="game.testrobot.msghandler.ResLoginFailedHandler" />
+    <msg message="game.message.LoginMessage$ResCreateRoleFailed" handler="game.testrobot.msghandler.ResCreateRoleFailedHandler" />
+    <msg message="game.message.LoginMessage$PingPong" handler="game.testrobot.msghandler.PingPongHandler" />
+</messages>

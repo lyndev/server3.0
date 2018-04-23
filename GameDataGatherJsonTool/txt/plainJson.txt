@@ -1,0 +1,15 @@
+[{
+  "unixtimestamp": 1407729468,
+  "order": "C08050",
+  "eventId": "U9006",
+  "param": "{\"allNum\":1,\"id\":10101,\"suc\":1}",
+  "playerId": "nszuo",
+  "time_spent": "2.415",
+  "event": "使用扫荡",
+  "fedId": "pc",
+  "fgi": "invalid fgi",
+  "serverId": "55",
+  "game": "172",
+  "group": "使用扫荡",
+  "type": ""
+}]

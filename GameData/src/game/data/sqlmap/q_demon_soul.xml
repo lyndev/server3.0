@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_demon_soul">
+    <resultMap id="bean" type="game.data.bean.q_demon_soulBean" >
+            <result column="q_id" property="q_id" jdbcType="INTEGER" />
+            <result column="q_level" property="q_level" jdbcType="INTEGER" />
+            <result column="q_stage" property="q_stage" jdbcType="INTEGER" />
+            <result column="q_exp_need" property="q_exp_need" jdbcType="INTEGER" />
+            <result column="q_is_upStage" property="q_is_upStage" jdbcType="INTEGER" />
+            <result column="q_debris_need" property="q_debris_need" jdbcType="VARCHAR" />
+            <result column="q_coin_need" property="q_coin_need" jdbcType="INTEGER" />
+            <result column="q_exp_award" property="q_exp_award" jdbcType="INTEGER" />
+            <result column="q_leader_lv" property="q_leader_lv" jdbcType="INTEGER" />
+            <result column="q_power_add" property="q_power_add" jdbcType="INTEGER" />
+            <result column="q_agi_need" property="q_agi_need" jdbcType="INTEGER" />
+            <result column="q_wisdom_need" property="q_wisdom_need" jdbcType="INTEGER" />
+            <result column="q_normal_crit" property="q_normal_crit" jdbcType="INTEGER" />
+            <result column="q_vip_crit" property="q_vip_crit" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_demon_soul
+    </select>
+</mapper>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-config.dtd">
+<configuration>
+    <environments default="development">
+	<environment id="development">
+	    <transactionManager type="JDBC"/>
+	    <dataSource type="POOLED">
+		<property name="driver" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="${url}"/>
+		<property name="username" value="${username}"/>
+		<property name="password" value="${password}"/>
+		<property name="poolPingQuery" value="select 1"/>
+		<property name="poolPingEnabled" value="true"/>
+		<property name="poolPingConnectionsNotUsedFor" value="3600000"/>
+	    </dataSource> 
+	</environment> 
+    </environments> 
+    <mappers>
+        <mapper resource="game/data/sqlmap/q_aiConfig.xml" />
+        <mapper resource="game/data/sqlmap/q_buff_new.xml" />
+        <mapper resource="game/data/sqlmap/q_vip_market.xml" />
+        <mapper resource="game/data/sqlmap/q_vip.xml" />
+        <mapper resource="game/data/sqlmap/q_special_equip.xml" />
+        <mapper resource="game/data/sqlmap/q_world_boss.xml" />
+        <mapper resource="game/data/sqlmap/q_main_build.xml" />
+        <mapper resource="game/data/sqlmap/q_task.xml" />
+        <mapper resource="game/data/sqlmap/q_main_mission.xml" />
+        <mapper resource="game/data/sqlmap/q_leader_upstar.xml" />
+        <mapper resource="game/data/sqlmap/q_main_role.xml" />
+        <mapper resource="game/data/sqlmap/q_item_produce_monit.xml" />
+        <mapper resource="game/data/sqlmap/q_resource_produce_monit.xml" />
+        <mapper resource="game/data/sqlmap/q_recharge.xml" />
+        <mapper resource="game/data/sqlmap/q_global.xml" />
+        <mapper resource="game/data/sqlmap/q_mission_talk.xml" />
+        <mapper resource="game/data/sqlmap/q_level_package.xml" />
+        <mapper resource="game/data/sqlmap/q_mission_chapter.xml" />
+        <mapper resource="game/data/sqlmap/q_control.xml" />
+        <mapper resource="game/data/sqlmap/q_npc_summon.xml" />
+        <mapper resource="game/data/sqlmap/q_store_pack.xml" />
+        <mapper resource="game/data/sqlmap/q_storeConfig.xml" />
+        <mapper resource="game/data/sqlmap/q_game_map.xml" />
+        <mapper resource="game/data/sqlmap/q_position.xml" />
+        <mapper resource="game/data/sqlmap/q_gem.xml" />
+        <mapper resource="game/data/sqlmap/q_color_attr.xml" />
+        <mapper resource="game/data/sqlmap/q_box_items.xml" />
+        <mapper resource="game/data/sqlmap/q_box.xml" />
+        <mapper resource="game/data/sqlmap/q_monster_pos.xml" />
+        <mapper resource="game/data/sqlmap/q_npc_monster.xml" />
+        <mapper resource="game/data/sqlmap/q_monster_level_attribute.xml" />
+        <mapper resource="game/data/sqlmap/q_demon_soul.xml" />
+        <mapper resource="game/data/sqlmap/q_fight_power.xml" />
+        <mapper resource="game/data/sqlmap/q_skill_buff_level.xml" />
+        <mapper resource="game/data/sqlmap/q_skill_cost.xml" />
+        <mapper resource="game/data/sqlmap/q_effect.xml" />
+        <mapper resource="game/data/sqlmap/q_skill_grow.xml" />
+        <mapper resource="game/data/sqlmap/q_skill.xml" />
+        <mapper resource="game/data/sqlmap/q_filterword.xml" />
+        <mapper resource="game/data/sqlmap/q_guide.xml" />
+        <mapper resource="game/data/sqlmap/q_daily_task.xml" />
+        <mapper resource="game/data/sqlmap/q_exchange_coin.xml" />
+        <mapper resource="game/data/sqlmap/q_item.xml" />
+        <mapper resource="game/data/sqlmap/q_special_entity.xml" />
+        <mapper resource="game/data/sqlmap/q_act_head.xml" />
+        <mapper resource="game/data/sqlmap/q_act_name.xml" />
+        <mapper resource="game/data/sqlmap/q_score_reward.xml" />
+        <mapper resource="game/data/sqlmap/q_score_mission.xml" />
+        <mapper resource="game/data/sqlmap/q_robot_config.xml" />
+        <mapper resource="game/data/sqlmap/q_arena_ranking_reward.xml" />
+        <mapper resource="game/data/sqlmap/q_qiandao.xml" />
+        <mapper resource="game/data/sqlmap/q_script.xml" />
+        <mapper resource="game/data/sqlmap/q_npc_hero.xml" />
+        <mapper resource="game/data/sqlmap/q_card_formula.xml" />
+        <mapper resource="game/data/sqlmap/q_hero_soulcost.xml" />
+        <mapper resource="game/data/sqlmap/q_hero_exp.xml" />
+        <mapper resource="game/data/sqlmap/q_equipment.xml" />
+        <mapper resource="game/data/sqlmap/q_action_time.xml" />
+        <mapper resource="game/data/sqlmap/q_language.xml" />
+        <mapper resource="game/data/sqlmap/q_buy_cost.xml" />
+        <mapper resource="game/data/sqlmap/q_resource_mission.xml" />
+        <mapper resource="game/data/sqlmap/q_oper_activity.xml" />
+        <mapper resource="game/data/sqlmap/q_expedition.xml" />
+        <mapper resource="game/data/sqlmap/q_expedition_node_group.xml" />
+        <mapper resource="game/data/sqlmap/q_gold_Lottery.xml" />
+        <mapper resource="game/data/sqlmap/q_gem_Lottery.xml" />
+        <mapper resource="game/data/sqlmap/q_node_effect.xml" />
+        <mapper resource="game/data/sqlmap/q_first_recharge.xml" />
+    </mappers>
+</configuration>

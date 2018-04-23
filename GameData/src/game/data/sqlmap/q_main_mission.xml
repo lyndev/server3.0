@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_main_mission">
+    <resultMap id="bean" type="game.data.bean.q_main_missionBean" >
+            <result column="q_id" property="q_id" jdbcType="INTEGER" />
+            <result column="q_next_id" property="q_next_id" jdbcType="INTEGER" />
+            <result column="q_unlock_id" property="q_unlock_id" jdbcType="INTEGER" />
+            <result column="q_name" property="q_name" jdbcType="INTEGER" />
+            <result column="q_mapId" property="q_mapId" jdbcType="INTEGER" />
+            <result column="q_name_point" property="q_name_point" jdbcType="VARCHAR" />
+            <result column="q_difficulty" property="q_difficulty" jdbcType="INTEGER" />
+            <result column="q_daily_count" property="q_daily_count" jdbcType="INTEGER" />
+            <result column="q_type" property="q_type" jdbcType="INTEGER" />
+            <result column="q_effective" property="q_effective" jdbcType="INTEGER" />
+            <result column="q_maxNode" property="q_maxNode" jdbcType="INTEGER" />
+            <result column="q_force_main_card" property="q_force_main_card" jdbcType="INTEGER" />
+            <result column="q_limit_jion_num" property="q_limit_jion_num" jdbcType="INTEGER" />
+            <result column="q_count_down_1" property="q_count_down_1" jdbcType="INTEGER" />
+            <result column="q_count_down_2" property="q_count_down_2" jdbcType="INTEGER" />
+            <result column="q_count_down_3" property="q_count_down_3" jdbcType="INTEGER" />
+            <result column="q_chapter_id" property="q_chapter_id" jdbcType="INTEGER" />
+            <result column="q_power" property="q_power" jdbcType="INTEGER" />
+            <result column="q_mop_goodsid" property="q_mop_goodsid" jdbcType="INTEGER" />
+            <result column="q_mop_goods_num" property="q_mop_goods_num" jdbcType="INTEGER" />
+            <result column="q_gold" property="q_gold" jdbcType="INTEGER" />
+            <result column="q_bullion" property="q_bullion" jdbcType="INTEGER" />
+            <result column="q_leader_exp" property="q_leader_exp" jdbcType="INTEGER" />
+            <result column="q_exp" property="q_exp" jdbcType="INTEGER" />
+            <result column="q_raid_exp" property="q_raid_exp" jdbcType="VARCHAR" />
+            <result column="q_monsterId" property="q_monsterId" jdbcType="VARCHAR" />
+            <result column="q_drop_items" property="q_drop_items" jdbcType="VARCHAR" />
+            <result column="q_monsterPosId" property="q_monsterPosId" jdbcType="INTEGER" />
+            <result column="q_firstDropId" property="q_firstDropId" jdbcType="INTEGER" />
+            <result column="q_first_bullion" property="q_first_bullion" jdbcType="INTEGER" />
+            <result column="q_normalDropIds" property="q_normalDropIds" jdbcType="INTEGER" />
+            <result column="q_bossIds" property="q_bossIds" jdbcType="VARCHAR" />
+            <result column="q_bossDropItems" property="q_bossDropItems" jdbcType="INTEGER" />
+            <result column="q_node_effect" property="q_node_effect" jdbcType="INTEGER" />
+            <result column="q_music" property="q_music" jdbcType="VARCHAR" />
+            <result column="q_mission_talk_id" property="q_mission_talk_id" jdbcType="VARCHAR" />
+            <result column="q_over_trigger" property="q_over_trigger" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_main_mission
+    </select>
+</mapper>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE configuration 
+  PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN"
+  "http://ibatis.apache.org/dtd/ibatis-3-config.dtd">
+<configuration>
+    <settings>
+	<setting name="defaultStatementTimeout" value="60"/>
+    </settings>
+  
+    <environments default="development">
+	<environment id="development">
+	    <transactionManager type="JDBC"/>
+	    <dataSource type="POOLED">
+		<property name="driver" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://192.168.1.35:3306/kapai_game_log?autoReconnect=true"/>
+		<property name="username" value="root"/>
+		<property name="password" value="123456"/>
+		<property name="poolPingQuery" value="select 1"/>
+		<property name="poolPingEnabled" value="true"/>
+		<property name="poolPingConnectionsNotUsedFor" value="3600000"/>
+	    </dataSource>
+	</environment>
+    </environments>
+
+    <mappers>
+	<mapper resource="game/gather/db/sqlmap/TestLog1.xml"/>
+	<mapper resource="game/gather/db/sqlmap/TestLog2.xml"/>
+	<mapper resource="game/gather/db/sqlmap/RoleLoginLog.xml"/>
+	<mapper resource="game/gather/db/sqlmap/RoleLogoutLog.xml"/>
+	<mapper resource="game/gather/db/sqlmap/CreateRoleLog.xml"/>
+	<mapper resource="game/gather/db/sqlmap/ItemChangeLog.xml"/>
+	<mapper resource="game/gather/db/sqlmap/CardActiveLog.xml"/>
+	<mapper resource="game/gather/db/sqlmap/CardSkillLog.xml"/>
+	<mapper resource="game/gather/db/sqlmap/MainMissionStartLog.xml" />
+	<mapper resource="game/gather/db/sqlmap/MainMissionResultLog.xml"/>
+	<mapper resource="game/gather/db/sqlmap/CurrencyLog.xml"/>
+	<mapper resource="game/gather/db/sqlmap/EquipLevelUpLog.xml"/>
+	<mapper resource="game/gather/db/sqlmap/EquipStrengthenLog.xml"/>
+	<mapper resource="game/gather/db/sqlmap/MainTaskLog.xml"/>
+	<mapper resource="game/gather/db/sqlmap/DailyTaskLog.xml"/>
+	<mapper resource="game/gather/db/sqlmap/DailyTaskAwardLog.xml"/>
+	<mapper resource="game/gather/db/sqlmap/OnLinePlayerNumLog.xml"/>
+	<mapper resource="game/gather/db/sqlmap/ServerCPUMonitorLog.xml"/>
+	<mapper resource="game/gather/db/sqlmap/ServerMemMonitorLog.xml"/>
+	<mapper resource="game/gather/db/sqlmap/NewbieGuideLog.xml"/>
+	<mapper resource="game/gather/db/sqlmap/RoleLog.xml"/>
+    </mappers>
+</configuration> 

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <servlet>
+        <servlet-name>Log4JInitServlet</servlet-name>
+        <servlet-class>game.gather.servlet.Log4JInitServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>GatherServlet</servlet-name>
+        <servlet-class>game.gather.servlet.GatherServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CrashReportServlet</servlet-name>
+        <servlet-class>game.gather.servlet.CrashReportServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GameLoggerInitServlet</servlet-name>
+        <servlet-class>game.gather.servlet.GameLoggerInitServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Log4JInitServlet</servlet-name>
+        <url-pattern>/Log4JInitServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GatherServlet</servlet-name>
+        <url-pattern>/gather</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CrashReportServlet</servlet-name>
+        <url-pattern>/crash</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GameLoggerInitServlet</servlet-name>
+        <url-pattern>/GameLoggerInitServlet</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>

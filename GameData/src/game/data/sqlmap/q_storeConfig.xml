@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_storeConfig">
+    <resultMap id="bean" type="game.data.bean.q_storeConfigBean" >
+            <result column="q_id" property="q_id" jdbcType="INTEGER" />
+            <result column="q_type" property="q_type" jdbcType="INTEGER" />
+            <result column="q_pos" property="q_pos" jdbcType="INTEGER" />
+            <result column="q_level" property="q_level" jdbcType="INTEGER" />
+            <result column="q_item_id" property="q_item_id" jdbcType="VARCHAR" />
+            <result column="q_pack" property="q_pack" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_storeConfig
+    </select>
+</mapper>

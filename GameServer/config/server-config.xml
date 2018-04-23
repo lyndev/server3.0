@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<server>
+    <game-udp-port value="7777" />
+    <game-port value="10086" />
+    <http-port value="8889" />
+    <gm-port value="10000" />
+    <open-time value="1407081600"/>  <!-- 开服时间戳 -->
+    <platform-id value="123" />
+    <server-id value="731" />
+    <robot-count value="5000" />
+    <!--mariadb
+    <db-game url="jdbc:mariadb://47.106.91.153:3306/game_data?autoReconnect=true" username="root" password="111111" />
+    <db-game-data url="jdbc:mariadb://47.106.91.153:3306/game_template_data?autoReconnect=true" username="root" password="111111" />
+     -->
+    <!-- mysql   -->
+    <db-game url="jdbc:mysql://47.106.91.153:3306/game_data?autoReconnect=true" username="root" password="111111" />
+    <db-game-data url="jdbc:mysql://47.106.91.153:3306/game_template_data?autoReconnect=true" username="root" password="111111" />
+ 
+    
+    <max-connect value="20000" />
+    <heart-time value="3600" />
+    <game-server-type value = "3"/> <!-- 服务器类型：cocos2d = 1,  unity3d = 2.  creator = 3 -->
+    <game-server-types	cocos2d = "1"
+			unity3d = "2"
+			creator = "3"/> <!-- 服务器类型：cocos2d,  u3d,  creator -->
+    <login-key value="companyaddress_20130427140020_au3MaRNd0Dgs6vJYBekkSrTwsz9poiUY" />   
+    <fight-server ip="192.168.1.36" port="12246" />
+    <game-logger game-id="172"
+		 mongodb-host="127.0.0.1"
+		 mongodb-port="27017"
+		 mongodb-name="game_log_server"
+		 mongodb-user=""
+		 mongodb-passwd="" />
+</server>

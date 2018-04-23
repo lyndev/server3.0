@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="role">
+    <resultMap id="roleBean" type="game.server.db.game.bean.RoleBean">
+	<result column="roleId" property="roleId" jdbcType="VARCHAR" />
+	<result column="userId" property="userId" jdbcType="VARCHAR" />
+	<result column="roleName" property="roleName" jdbcType="VARCHAR" />
+	<result column="roleLevel" property="roleLevel" jdbcType="INTEGER" />
+	<result column="vipLevel" property="vipLevel" jdbcType="INTEGER" />
+	<result column="fgi" property="fgi" jdbcType="VARCHAR" />
+	<result column="fedId" property="fedId" jdbcType="VARCHAR" />
+	<result column="platformId" property="platformId" jdbcType="INTEGER" />
+	<result column="serverId" property="serverId" jdbcType="INTEGER" />
+	<result column="roleExp" property="roleExp" jdbcType="INTEGER" />
+	<result column="roleHead" property="roleHead" jdbcType="INTEGER" />
+	<result column="isRobot" property="isRobot" jdbcType="INTEGER" />
+	<result column="miscData" property="miscData" jdbcType="LONGVARCHAR" />
+    </resultMap>
+
+    <resultMap id="friendBean" type="game.server.db.game.bean.FriendDataBean">
+	<result column="roleId" property="roleId" jdbcType="VARCHAR" />
+	<result column="userId" property="userId" jdbcType="VARCHAR" />
+	<result column="friendData" property="friendData" jdbcType="LONGVARCHAR" />
+    </resultMap>
+    
+    <insert id="insert" parameterType="game.server.db.game.bean.RoleBean" >
+	INSERT INTO role (roleId, userId, roleName, roleLevel, vipLevel, fgi, fedId, platformId, serverId, roleExp, roleHead, isRobot, miscData, friendData)
+	VALUES (
+	#{roleId, jdbcType=VARCHAR},
+	#{userId, jdbcType=VARCHAR},
+	#{roleName, jdbcType=VARCHAR},
+	#{roleLevel, jdbcType=INTEGER},
+	#{vipLevel, jdbcType=INTEGER},
+	#{fgi, jdbcType=VARCHAR},
+	#{fedId, jdbcType=VARCHAR},
+	#{platformId, jdbcType=INTEGER},
+	#{serverId, jdbcType=INTEGER},
+	#{roleExp, jdbcType=INTEGER},
+	#{roleHead, jdbcType=INTEGER},
+	#{isRobot, jdbcType=INTEGER},
+	#{miscData, jdbcType=LONGVARCHAR},
+	'')
+    </insert>
+
+    <update id="update" parameterType="game.server.db.game.bean.RoleBean" >
+	update role set
+	roleName = #{roleName, jdbcType=VARCHAR},
+	roleLevel = #{roleLevel, jdbcType=INTEGER},
+	vipLevel = #{vipLevel, jdbcType=INTEGER},
+	roleExp = #{roleExp, jdbcType=INTEGER},
+	roleHead = #{roleHead, jdbcType=INTEGER},
+	miscData = #{miscData, jdbcType=LONGVARCHAR}
+	where roleId = #{roleId, jdbcType=VARCHAR}
+    </update>
+
+    <update id="updateMiscData" parameterType="game.server.db.game.bean.RoleBean" >
+	update role set
+	miscData = #{miscData, jdbcType=LONGVARCHAR}
+	where roleId = #{roleId, jdbcType=VARCHAR}
+    </update>
+    
+    <select id="selectByRoleName" parameterType="HashMap" resultMap="roleBean">
+	SELECT roleId, userId, roleName, roleLevel, vipLevel, fgi, fedId, platformId, serverId, roleExp, roleHead, isRobot, miscData
+	FROM role
+	WHERE roleName = #{roleName, jdbcType=VARCHAR}
+    </select>
+
+    <select id="selectByRoleId" parameterType="HashMap" resultMap="roleBean">
+	SELECT roleId, userId, roleName, roleLevel, vipLevel, fgi, fedId, platformId, serverId, roleExp, roleHead, isRobot, miscData
+	FROM role
+	WHERE roleId = #{roleId, jdbcType=VARCHAR}
+    </select>
+
+    <select id="selectByUserId" parameterType="HashMap" resultMap="roleBean">
+	SELECT roleId, userId, roleName, roleLevel, vipLevel, fgi, fedId, platformId, serverId, roleExp, roleHead, isRobot, miscData
+	FROM role
+	WHERE userId = #{userId, jdbcType=VARCHAR}
+    </select>
+
+    <select id="selectAll" resultType="game.server.db.game.bean.RoleBean">
+	SELECT roleId, userId, roleName, roleLevel, vipLevel, fgi, fedId, platformId, serverId, roleExp, roleHead, isRobot, miscData
+	FROM role
+    </select>
+    
+    <select id="selectAllFriendData" resultType="game.server.db.game.bean.FriendDataBean">
+	SELECT roleId, userId, friendData
+	FROM role
+	WHERE isRobot=0
+    </select>
+    
+    <update id="updateFriendData" parameterType="game.server.db.game.bean.FriendDataBean" >
+	update role set
+	friendData = #{friendData, jdbcType=LONGVARCHAR}
+	where roleId = #{roleId, jdbcType=VARCHAR}
+    </update>
+    
+    <delete id="deleteAllRobot">
+	delete from role where isRobot = 1
+    </delete>
+    
+</mapper>

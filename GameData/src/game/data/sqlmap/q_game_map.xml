@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_game_map">
+    <resultMap id="bean" type="game.data.bean.q_game_mapBean" >
+            <result column="q_mapId" property="q_mapId" jdbcType="INTEGER" />
+            <result column="q_scene_count" property="q_scene_count" jdbcType="INTEGER" />
+            <result column="q_map_middle_image" property="q_map_middle_image" jdbcType="VARCHAR" />
+            <result column="q_map_far_image_front" property="q_map_far_image_front" jdbcType="VARCHAR" />
+            <result column="q_map_far_image_back" property="q_map_far_image_back" jdbcType="VARCHAR" />
+            <result column="q_map_bottom_boundary" property="q_map_bottom_boundary" jdbcType="INTEGER" />
+            <result column="q_map_top_boundary" property="q_map_top_boundary" jdbcType="INTEGER" />
+            <result column="q_map_left_boundary" property="q_map_left_boundary" jdbcType="INTEGER" />
+            <result column="q_map_right_boundary" property="q_map_right_boundary" jdbcType="INTEGER" />
+            <result column="q_map_desc" property="q_map_desc" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_game_map
+    </select>
+</mapper>

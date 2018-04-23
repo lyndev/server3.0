@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_guide">
+    <resultMap id="bean" type="game.data.bean.q_guideBean" >
+            <result column="q_id" property="q_id" jdbcType="INTEGER" />
+            <result column="q_description" property="q_description" jdbcType="LONGVARCHAR" />
+            <result column="q_mainitem" property="q_mainitem" jdbcType="INTEGER" />
+            <result column="q_subitem" property="q_subitem" jdbcType="INTEGER" />
+            <result column="q_next_id" property="q_next_id" jdbcType="INTEGER" />
+            <result column="q_isforce" property="q_isforce" jdbcType="INTEGER" />
+            <result column="q_begin_conditions" property="q_begin_conditions" jdbcType="VARCHAR" />
+            <result column="q_end_conditions" property="q_end_conditions" jdbcType="VARCHAR" />
+            <result column="q_main_building" property="q_main_building" jdbcType="VARCHAR" />
+            <result column="q_chapter_node" property="q_chapter_node" jdbcType="INTEGER" />
+            <result column="q_force_show" property="q_force_show" jdbcType="VARCHAR" />
+            <result column="q_pre_finish_step" property="q_pre_finish_step" jdbcType="VARCHAR" />
+            <result column="q_restore_step" property="q_restore_step" jdbcType="VARCHAR" />
+            <result column="q_move_by" property="q_move_by" jdbcType="VARCHAR" />
+            <result column="q_need_notice_ui" property="q_need_notice_ui" jdbcType="INTEGER" />
+            <result column="q_ui_zorder" property="q_ui_zorder" jdbcType="INTEGER" />
+            <result column="q_image_flip" property="q_image_flip" jdbcType="INTEGER" />
+            <result column="q_language" property="q_language" jdbcType="INTEGER" />
+            <result column="q_delay" property="q_delay" jdbcType="INTEGER" />
+            <result column="q_finger_offset" property="q_finger_offset" jdbcType="VARCHAR" />
+            <result column="q_guide_type" property="q_guide_type" jdbcType="INTEGER" />
+            <result column="q_hero_id" property="q_hero_id" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_guide
+    </select>
+</mapper>

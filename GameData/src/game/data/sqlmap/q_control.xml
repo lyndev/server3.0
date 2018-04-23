@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_control">
+    <resultMap id="bean" type="game.data.bean.q_controlBean" >
+            <result column="q_functionId" property="q_functionId" jdbcType="VARCHAR" />
+            <result column="q_memo" property="q_memo" jdbcType="VARCHAR" />
+            <result column="q_desc" property="q_desc" jdbcType="INTEGER" />
+            <result column="q_act_level" property="q_act_level" jdbcType="INTEGER" />
+            <result column="q_vip_level" property="q_vip_level" jdbcType="INTEGER" />
+            <result column="q_task_id" property="q_task_id" jdbcType="INTEGER" />
+            <result column="q_main_chapterid" property="q_main_chapterid" jdbcType="INTEGER" />
+            <result column="q_card_level" property="q_card_level" jdbcType="INTEGER" />
+            <result column="q_open_effect" property="q_open_effect" jdbcType="INTEGER" />
+            <result column="q_open_notice" property="q_open_notice" jdbcType="INTEGER" />
+            <result column="q_is_open" property="q_is_open" jdbcType="INTEGER" />
+            <result column="q_server_openday" property="q_server_openday" jdbcType="INTEGER" />
+            <result column="q_script" property="q_script" jdbcType="INTEGER" />
+            <result column="q_icon" property="q_icon" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_control
+    </select>
+</mapper>

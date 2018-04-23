@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_effect">
+    <resultMap id="bean" type="game.data.bean.q_effectBean" >
+            <result column="q_effect_id" property="q_effect_id" jdbcType="INTEGER" />
+            <result column="q_effect_name" property="q_effect_name" jdbcType="VARCHAR" />
+            <result column="q_effect_object" property="q_effect_object" jdbcType="INTEGER" />
+            <result column="q_effect_type" property="q_effect_type" jdbcType="INTEGER" />
+            <result column="q_hurt_type" property="q_hurt_type" jdbcType="INTEGER" />
+            <result column="q_is_warning" property="q_is_warning" jdbcType="INTEGER" />
+            <result column="q_odds" property="q_odds" jdbcType="INTEGER" />
+            <result column="q_selector" property="q_selector" jdbcType="VARCHAR" />
+            <result column="q_effect_var" property="q_effect_var" jdbcType="VARCHAR" />
+            <result column="q_trajectory_speed" property="q_trajectory_speed" jdbcType="INTEGER" />
+            <result column="q_trajectory_acceleration" property="q_trajectory_acceleration" jdbcType="INTEGER" />
+            <result column="q_trajectory_angle" property="q_trajectory_angle" jdbcType="INTEGER" />
+            <result column="q_trajectory_mode" property="q_trajectory_mode" jdbcType="INTEGER" />
+            <result column="q_snowstorm_effect" property="q_snowstorm_effect" jdbcType="VARCHAR" />
+            <result column="q_snowstorm_delay" property="q_snowstorm_delay" jdbcType="INTEGER" />
+            <result column="q_trajectory_effect" property="q_trajectory_effect" jdbcType="VARCHAR" />
+            <result column="q_range_effect" property="q_range_effect" jdbcType="VARCHAR" />
+            <result column="q_hit_effect" property="q_hit_effect" jdbcType="VARCHAR" />
+            <result column="q_effect_music" property="q_effect_music" jdbcType="VARCHAR" />
+            <result column="q_hit_music" property="q_hit_music" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_effect
+    </select>
+</mapper>

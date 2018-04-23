@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_npc_monster">
+    <resultMap id="bean" type="game.data.bean.q_npc_monsterBean" >
+            <result column="q_id" property="q_id" jdbcType="INTEGER" />
+            <result column="q_name" property="q_name" jdbcType="VARCHAR" />
+            <result column="q_desc" property="q_desc" jdbcType="INTEGER" />
+            <result column="q_scale" property="q_scale" jdbcType="INTEGER" />
+            <result column="q_action_time_id" property="q_action_time_id" jdbcType="INTEGER" />
+            <result column="q_sex" property="q_sex" jdbcType="INTEGER" />
+            <result column="q_type" property="q_type" jdbcType="INTEGER" />
+            <result column="q_professional" property="q_professional" jdbcType="INTEGER" />
+            <result column="q_monster_type" property="q_monster_type" jdbcType="INTEGER" />
+            <result column="q_bloodstyle" property="q_bloodstyle" jdbcType="VARCHAR" />
+            <result column="q_ai_frequency" property="q_ai_frequency" jdbcType="INTEGER" />
+            <result column="q_aiId" property="q_aiId" jdbcType="INTEGER" />
+            <result column="q_tag" property="q_tag" jdbcType="INTEGER" />
+            <result column="q_energy" property="q_energy" jdbcType="INTEGER" />
+            <result column="q_hp_tf_energy" property="q_hp_tf_energy" jdbcType="INTEGER" />
+            <result column="q_ai" property="q_ai" jdbcType="INTEGER" />
+            <result column="q_hard_odds" property="q_hard_odds" jdbcType="INTEGER" />
+            <result column="q_attack_type" property="q_attack_type" jdbcType="INTEGER" />
+            <result column="q_quality" property="q_quality" jdbcType="INTEGER" />
+            <result column="q_star" property="q_star" jdbcType="INTEGER" />
+            <result column="q_max_star" property="q_max_star" jdbcType="INTEGER" />
+            <result column="q_skills" property="q_skills" jdbcType="VARCHAR" />
+            <result column="q_base_level" property="q_base_level" jdbcType="INTEGER" />
+            <result column="q_hp_factor" property="q_hp_factor" jdbcType="INTEGER" />
+            <result column="q_phy_atk_factor" property="q_phy_atk_factor" jdbcType="INTEGER" />
+            <result column="q_magic_atk_factor" property="q_magic_atk_factor" jdbcType="INTEGER" />
+            <result column="q_phy_def_factor" property="q_phy_def_factor" jdbcType="INTEGER" />
+            <result column="q_magic_def_factor" property="q_magic_def_factor" jdbcType="INTEGER" />
+            <result column="q_hit_factor" property="q_hit_factor" jdbcType="INTEGER" />
+            <result column="q_phy_crit_factor" property="q_phy_crit_factor" jdbcType="INTEGER" />
+            <result column="q_magic_crit_factor" property="q_magic_crit_factor" jdbcType="INTEGER" />
+            <result column="q_phy_evade_factor" property="q_phy_evade_factor" jdbcType="INTEGER" />
+            <result column="q_magic_evade_factor" property="q_magic_evade_factor" jdbcType="INTEGER" />
+            <result column="q_crit_dmg_factor" property="q_crit_dmg_factor" jdbcType="INTEGER" />
+            <result column="q_phy_Pierce_factor" property="q_phy_Pierce_factor" jdbcType="INTEGER" />
+            <result column="q_magic_Pierce_factor" property="q_magic_Pierce_factor" jdbcType="INTEGER" />
+            <result column="q_drains_factor" property="q_drains_factor" jdbcType="INTEGER" />
+            <result column="q_toughness_factor" property="q_toughness_factor" jdbcType="INTEGER" />
+            <result column="q_attack_speed" property="q_attack_speed" jdbcType="INTEGER" />
+            <result column="q_move_speed" property="q_move_speed" jdbcType="INTEGER" />
+            <result column="q_spine" property="q_spine" jdbcType="VARCHAR" />
+            <result column="q_img_half_body" property="q_img_half_body" jdbcType="VARCHAR" />
+            <result column="q_img_head" property="q_img_head" jdbcType="VARCHAR" />
+            <result column="q_img_fight_head" property="q_img_fight_head" jdbcType="VARCHAR" />
+            <result column="q_img_fight_result_head" property="q_img_fight_result_head" jdbcType="VARCHAR" />
+            <result column="q_die_music" property="q_die_music" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_npc_monster
+    </select>
+</mapper>

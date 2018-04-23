@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_qiandao">
+    <resultMap id="bean" type="game.data.bean.q_qiandaoBean" >
+            <result column="q_yuefen" property="q_yuefen" jdbcType="INTEGER" />
+            <result column="q_item1" property="q_item1" jdbcType="VARCHAR" />
+            <result column="q_item2" property="q_item2" jdbcType="VARCHAR" />
+            <result column="q_item3" property="q_item3" jdbcType="VARCHAR" />
+            <result column="q_item4" property="q_item4" jdbcType="VARCHAR" />
+            <result column="q_item5" property="q_item5" jdbcType="VARCHAR" />
+            <result column="q_item6" property="q_item6" jdbcType="VARCHAR" />
+            <result column="q_item7" property="q_item7" jdbcType="VARCHAR" />
+            <result column="q_item8" property="q_item8" jdbcType="VARCHAR" />
+            <result column="q_item9" property="q_item9" jdbcType="VARCHAR" />
+            <result column="q_item10" property="q_item10" jdbcType="VARCHAR" />
+            <result column="q_item11" property="q_item11" jdbcType="VARCHAR" />
+            <result column="q_item12" property="q_item12" jdbcType="VARCHAR" />
+            <result column="q_item13" property="q_item13" jdbcType="VARCHAR" />
+            <result column="q_item14" property="q_item14" jdbcType="VARCHAR" />
+            <result column="q_item15" property="q_item15" jdbcType="VARCHAR" />
+            <result column="q_item16" property="q_item16" jdbcType="VARCHAR" />
+            <result column="q_item17" property="q_item17" jdbcType="VARCHAR" />
+            <result column="q_item18" property="q_item18" jdbcType="VARCHAR" />
+            <result column="q_item19" property="q_item19" jdbcType="VARCHAR" />
+            <result column="q_item20" property="q_item20" jdbcType="VARCHAR" />
+            <result column="q_item21" property="q_item21" jdbcType="VARCHAR" />
+            <result column="q_item22" property="q_item22" jdbcType="VARCHAR" />
+            <result column="q_item23" property="q_item23" jdbcType="VARCHAR" />
+            <result column="q_item24" property="q_item24" jdbcType="VARCHAR" />
+            <result column="q_item25" property="q_item25" jdbcType="VARCHAR" />
+            <result column="q_item26" property="q_item26" jdbcType="VARCHAR" />
+            <result column="q_item27" property="q_item27" jdbcType="VARCHAR" />
+            <result column="q_item28" property="q_item28" jdbcType="VARCHAR" />
+            <result column="q_item29" property="q_item29" jdbcType="VARCHAR" />
+            <result column="q_item30" property="q_item30" jdbcType="VARCHAR" />
+            <result column="q_item31" property="q_item31" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_qiandao
+    </select>
+</mapper>

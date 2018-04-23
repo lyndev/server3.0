@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="audioData">
+    
+    <resultMap id="AudioDataBean" type="game.server.db.game.bean.AudioDataBean">
+	<result column="uuid" property="uuid" jdbcType="VARCHAR" />
+	<result column="data" property="data" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <insert id="insert" parameterType="game.server.db.game.bean.AudioDataBean" >
+	INSERT INTO audioData (uuid, data)
+	VALUES (
+	#{uuid, jdbcType=VARCHAR},
+	#{data, jdbcType=VARCHAR})
+    </insert>
+    
+    <insert id="insertBatch" parameterType="java.util.List" >
+	INSERT INTO audioData (uuid, data)
+	VALUES 
+	<foreach collection="list" item="item" index="index" separator=",">
+	    (#{item.uuid, jdbcType=VARCHAR},
+	    #{item.data, jdbcType=VARCHAR})
+	</foreach>
+    </insert>
+    
+    <insert id="insertAudit" parameterType="game.server.db.game.bean.AudioDataBean" >
+	INSERT INTO audioDataAudit (uuid, data)
+	VALUES (
+	#{uuid, jdbcType=VARCHAR},
+	#{data, jdbcType=VARCHAR})
+    </insert>
+    
+    <insert id="insertAuditBatch" parameterType="java.util.List" >
+	INSERT INTO audioDataAudit (uuid, data)
+	VALUES 
+	<foreach collection="list" item="item" index="index" separator=",">
+	    (#{item.uuid, jdbcType=VARCHAR},
+	    #{item.data, jdbcType=VARCHAR})
+	</foreach>
+    </insert>
+
+    <delete id="delete" parameterType="HashMap" >
+	delete from audioData
+	where
+	uuid = #{uuid, jdbcType=VARCHAR}
+    </delete>
+    
+    <delete id="deleteAll">
+	TRUNCATE TABLE audiodata;
+	TRUNCATE TABLE audiodataaudit;
+    </delete>
+    
+    <select id="select" parameterType="HashMap" resultMap="AudioDataBean">
+	SELECT uuid, data
+	FROM audioData
+	WHERE
+	uuid = #{uuid, jdbcType=INTEGER}
+    </select>
+
+</mapper>

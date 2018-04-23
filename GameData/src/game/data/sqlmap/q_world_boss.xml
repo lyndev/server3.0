@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_world_boss">
+    <resultMap id="bean" type="game.data.bean.q_world_bossBean" >
+            <result column="q_id" property="q_id" jdbcType="INTEGER" />
+            <result column="q_plan_name" property="q_plan_name" jdbcType="VARCHAR" />
+            <result column="q_type" property="q_type" jdbcType="INTEGER" />
+            <result column="q_background" property="q_background" jdbcType="VARCHAR" />
+            <result column="q_difficult" property="q_difficult" jdbcType="INTEGER" />
+            <result column="q_active_level" property="q_active_level" jdbcType="INTEGER" />
+            <result column="q_open_cdt" property="q_open_cdt" jdbcType="VARCHAR" />
+            <result column="q_max_count" property="q_max_count" jdbcType="INTEGER" />
+            <result column="q_maxNode" property="q_maxNode" jdbcType="INTEGER" />
+            <result column="q_time" property="q_time" jdbcType="INTEGER" />
+            <result column="q_monster_pos_id" property="q_monster_pos_id" jdbcType="INTEGER" />
+            <result column="q_drop_id" property="q_drop_id" jdbcType="INTEGER" />
+            <result column="q_map_id" property="q_map_id" jdbcType="INTEGER" />
+            <result column="q_music" property="q_music" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_world_boss
+    </select>
+</mapper>

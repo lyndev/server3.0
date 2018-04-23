@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_mission_chapter">
+    <resultMap id="bean" type="game.data.bean.q_mission_chapterBean" >
+            <result column="q_chapter_id" property="q_chapter_id" jdbcType="INTEGER" />
+            <result column="q_chapter_name" property="q_chapter_name" jdbcType="INTEGER" />
+            <result column="q_chapter_difficulty" property="q_chapter_difficulty" jdbcType="INTEGER" />
+            <result column="q_ui" property="q_ui" jdbcType="VARCHAR" />
+            <result column="q_base_level" property="q_base_level" jdbcType="INTEGER" />
+            <result column="q_next_chapter_id" property="q_next_chapter_id" jdbcType="INTEGER" />
+            <result column="q_map_name" property="q_map_name" jdbcType="VARCHAR" />
+            <result column="q_subsidiary_id" property="q_subsidiary_id" jdbcType="VARCHAR" />
+            <result column="q_achievement_id" property="q_achievement_id" jdbcType="INTEGER" />
+            <result column="q_chapter_box" property="q_chapter_box" jdbcType="VARCHAR" />
+            <result column="q_reward_res" property="q_reward_res" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_mission_chapter
+    </select>
+</mapper>

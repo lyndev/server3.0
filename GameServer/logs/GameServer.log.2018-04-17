@@ -1,0 +1,457 @@
+[2018-04-17 09:21:49 ERROR](ServerConfig.java:137)unknow node [game-server-types]
+[2018-04-17 09:23:08 ERROR](LoginService.java:707)userName = d9c3b884-2850-4a5c-b4b1-e2a0385fa20c 已经创建过角色
+[2018-04-17 09:23:09 ERROR](LoginService.java:707)userName = ecca9daa-33e7-41ff-b684-028f9e215b0d 已经创建过角色
+[2018-04-17 09:24:08 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 09:24:08 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 09:24:12 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 09:24:12 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 09:27:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 09:32:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 09:37:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 09:37:04 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 09:37:04 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 09:37:07 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 09:37:07 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 09:42:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 09:47:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 09:52:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 09:57:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 10:02:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 10:07:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 10:12:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 10:17:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 10:22:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 10:27:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 10:32:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 10:37:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 10:42:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 10:47:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 10:52:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 10:57:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 11:02:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 11:07:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 11:12:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 11:17:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 11:22:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 11:27:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 11:32:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 11:37:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 11:42:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 11:47:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 11:52:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 11:57:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 12:02:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 12:07:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 12:12:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 12:17:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 12:22:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 12:27:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 12:32:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 12:37:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 12:42:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 12:47:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 12:52:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 12:57:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 13:02:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 13:07:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 13:12:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 13:17:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 13:22:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 13:26:58 ERROR](LoginService.java:707)userName = ecca9daa-33e7-41ff-b684-028f9e215b0d 已经创建过角色
+[2018-04-17 13:27:01 ERROR](LoginService.java:707)userName = d9c3b884-2850-4a5c-b4b1-e2a0385fa20c 已经创建过角色
+[2018-04-17 13:27:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 13:27:36 ERROR](RoomManager.java:139)获取房间类型对应的房间列表失败：无类型
+[2018-04-17 13:27:36 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 13:27:36 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 13:27:36 ERROR](GameWorld.java:286)doCommand error! cause:
+java.lang.NullPointerException
+	at game.server.world.room.RoomManager.getPlayerPlaceRoom(RoomManager.java:463)
+	at game.server.world.room.RoomManager.resPlayerOnOffLine(RoomManager.java:478)
+	at game.server.world.room.RoomManager.offlineProcess(RoomManager.java:505)
+	at game.server.world.GameWorld.connectClosed(GameWorld.java:232)
+	at game.server.world.login.handler.LWConnectClosedHandler.action(LWConnectClosedHandler.java:31)
+	at game.core.command.CommandProcessor.doCommand(CommandProcessor.java:127)
+	at game.core.command.CommandProcessor$1.run(CommandProcessor.java:108)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2018-04-17 13:27:36 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 13:27:36 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 13:32:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 13:37:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 13:40:11 ERROR](ServerConfig.java:137)unknow node [game-server-types]
+[2018-04-17 13:40:39 ERROR](LoginService.java:707)userName = d9c3b884-2850-4a5c-b4b1-e2a0385fa20c 已经创建过角色
+[2018-04-17 13:40:40 ERROR](LoginService.java:707)userName = ecca9daa-33e7-41ff-b684-028f9e215b0d 已经创建过角色
+[2018-04-17 13:41:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 13:41:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 13:41:03 ERROR](RoomManager.java:139)获取房间类型对应的房间列表失败：无类型
+[2018-04-17 13:41:03 ERROR](GameWorld.java:286)doCommand error! cause:
+java.lang.NullPointerException
+	at game.server.world.room.RoomManager.getPlayerPlaceRoom(RoomManager.java:463)
+	at game.server.world.room.RoomManager.resPlayerOnOffLine(RoomManager.java:478)
+	at game.server.world.room.RoomManager.offlineProcess(RoomManager.java:505)
+	at game.server.world.GameWorld.connectClosed(GameWorld.java:232)
+	at game.server.world.login.handler.LWConnectClosedHandler.action(LWConnectClosedHandler.java:31)
+	at game.core.command.CommandProcessor.doCommand(CommandProcessor.java:127)
+	at game.core.command.CommandProcessor$1.run(CommandProcessor.java:108)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2018-04-17 13:41:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 13:41:03 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 13:43:43 ERROR](LoginService.java:707)userName = aff235b1-7aa5-4034-bb76-8dbab34f8e3f 已经创建过角色
+[2018-04-17 14:44:03 ERROR](ServerConfig.java:137)unknow node [game-server-types]
+[2018-04-17 14:44:33 ERROR](LoginService.java:707)userName = d9c3b884-2850-4a5c-b4b1-e2a0385fa20c 已经创建过角色
+[2018-04-17 14:44:34 ERROR](LoginService.java:707)userName = ecca9daa-33e7-41ff-b684-028f9e215b0d 已经创建过角色
+[2018-04-17 14:44:36 ERROR](LoginService.java:707)userName = aff235b1-7aa5-4034-bb76-8dbab34f8e3f 已经创建过角色
+[2018-04-17 15:02:57 ERROR](ServerConfig.java:137)unknow node [game-server-types]
+[2018-04-17 15:03:25 ERROR](LoginService.java:707)userName = d9c3b884-2850-4a5c-b4b1-e2a0385fa20c 已经创建过角色
+[2018-04-17 15:03:32 ERROR](LoginService.java:707)userName = ecca9daa-33e7-41ff-b684-028f9e215b0d 已经创建过角色
+[2018-04-17 15:03:34 ERROR](LoginService.java:707)userName = aff235b1-7aa5-4034-bb76-8dbab34f8e3f 已经创建过角色
+[2018-04-17 15:06:13 ERROR](GameLine.java:606)doCommand error! cause:
+java.util.ConcurrentModificationException
+	at java.util.HashMap$HashIterator.nextNode(HashMap.java:1437)
+	at java.util.HashMap$EntryIterator.next(HashMap.java:1471)
+	at java.util.HashMap$EntryIterator.next(HashMap.java:1469)
+	at game.server.world.room.bean.ZJHRoom.GameOver(ZJHRoom.java:1005)
+	at game.server.world.room.bean.ZJHRoom.OnEventGameEnd(ZJHRoom.java:511)
+	at game.server.world.room.bean.ZJHRoom.OnUserGiveUp(ZJHRoom.java:754)
+	at game.server.world.room.bean.ZJHRoom.leaveRoom(ZJHRoom.java:634)
+	at game.server.world.room.RoomManager.sendPlayersLeaveRoom(RoomManager.java:407)
+	at game.server.world.room.RoomManager.onPlayerLeaveRoom(RoomManager.java:357)
+	at game.server.world.room.handler.ReqLeaveRoomHandler.action(ReqLeaveRoomHandler.java:28)
+	at game.core.command.CommandProcessor.doCommand(CommandProcessor.java:127)
+	at game.core.command.CommandProcessor$1.run(CommandProcessor.java:108)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2018-04-17 15:08:06 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:10:49 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:10:49 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:10:49 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:10:49 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:10:49 ERROR](RoomManager.java:139)获取房间类型对应的房间列表失败：无类型
+[2018-04-17 15:10:49 ERROR](GameWorld.java:286)doCommand error! cause:
+java.lang.NullPointerException
+	at game.server.world.room.RoomManager.getPlayerPlaceRoom(RoomManager.java:463)
+	at game.server.world.room.RoomManager.resPlayerOnOffLine(RoomManager.java:478)
+	at game.server.world.room.RoomManager.offlineProcess(RoomManager.java:505)
+	at game.server.world.GameWorld.connectClosed(GameWorld.java:232)
+	at game.server.world.login.handler.LWConnectClosedHandler.action(LWConnectClosedHandler.java:31)
+	at game.core.command.CommandProcessor.doCommand(CommandProcessor.java:127)
+	at game.core.command.CommandProcessor$1.run(CommandProcessor.java:108)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2018-04-17 15:10:49 ERROR](RoomManager.java:139)获取房间类型对应的房间列表失败：无类型
+[2018-04-17 15:10:49 ERROR](GameWorld.java:286)doCommand error! cause:
+java.lang.NullPointerException
+	at game.server.world.room.RoomManager.getPlayerPlaceRoom(RoomManager.java:463)
+	at game.server.world.room.RoomManager.resPlayerOnOffLine(RoomManager.java:478)
+	at game.server.world.room.RoomManager.offlineProcess(RoomManager.java:505)
+	at game.server.world.GameWorld.connectClosed(GameWorld.java:232)
+	at game.server.world.login.handler.LWConnectClosedHandler.action(LWConnectClosedHandler.java:31)
+	at game.core.command.CommandProcessor.doCommand(CommandProcessor.java:127)
+	at game.core.command.CommandProcessor$1.run(CommandProcessor.java:108)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2018-04-17 15:10:49 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:10:49 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:11:02 ERROR](ServerConfig.java:137)unknow node [game-server-types]
+[2018-04-17 15:16:12 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:21:12 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:26:12 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:31:12 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:31:41 ERROR](LoginService.java:707)userName = d9c3b884-2850-4a5c-b4b1-e2a0385fa20c 已经创建过角色
+[2018-04-17 15:31:45 ERROR](LoginService.java:707)userName = ecca9daa-33e7-41ff-b684-028f9e215b0d 已经创建过角色
+[2018-04-17 15:31:50 ERROR](LoginService.java:707)userName = aff235b1-7aa5-4034-bb76-8dbab34f8e3f 已经创建过角色
+[2018-04-17 15:31:53 ERROR](LoginService.java:707)userName = 6faac9c3-4608-403c-b116-4526facbad5c 已经创建过角色
+[2018-04-17 15:34:27 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:34:27 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:34:27 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:34:27 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:34:27 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:34:27 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:34:27 ERROR](RoomManager.java:139)获取房间类型对应的房间列表失败：无类型
+[2018-04-17 15:34:27 ERROR](GameWorld.java:286)doCommand error! cause:
+java.lang.NullPointerException
+	at game.server.world.room.RoomManager.getPlayerPlaceRoom(RoomManager.java:463)
+	at game.server.world.room.RoomManager.resPlayerOnOffLine(RoomManager.java:478)
+	at game.server.world.room.RoomManager.offlineProcess(RoomManager.java:505)
+	at game.server.world.GameWorld.connectClosed(GameWorld.java:232)
+	at game.server.world.login.handler.LWConnectClosedHandler.action(LWConnectClosedHandler.java:31)
+	at game.core.command.CommandProcessor.doCommand(CommandProcessor.java:127)
+	at game.core.command.CommandProcessor$1.run(CommandProcessor.java:108)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2018-04-17 15:34:27 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:34:27 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:36:12 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:41:12 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:41:44 ERROR](ServerConfig.java:137)unknow node [game-server-types]
+[2018-04-17 15:42:26 ERROR](LoginService.java:707)userName = d9c3b884-2850-4a5c-b4b1-e2a0385fa20c 已经创建过角色
+[2018-04-17 15:42:27 ERROR](LoginService.java:707)userName = ecca9daa-33e7-41ff-b684-028f9e215b0d 已经创建过角色
+[2018-04-17 15:42:29 ERROR](LoginService.java:707)userName = aff235b1-7aa5-4034-bb76-8dbab34f8e3f 已经创建过角色
+[2018-04-17 15:42:31 ERROR](LoginService.java:707)userName = 6faac9c3-4608-403c-b116-4526facbad5c 已经创建过角色
+[2018-04-17 15:44:33 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:44:33 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:44:33 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:44:33 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:44:33 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:44:33 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:44:33 ERROR](RoomManager.java:139)获取房间类型对应的房间列表失败：无类型
+[2018-04-17 15:44:33 ERROR](GameWorld.java:286)doCommand error! cause:
+java.lang.NullPointerException
+	at game.server.world.room.RoomManager.getPlayerPlaceRoom(RoomManager.java:463)
+	at game.server.world.room.RoomManager.resPlayerOnOffLine(RoomManager.java:478)
+	at game.server.world.room.RoomManager.offlineProcess(RoomManager.java:505)
+	at game.server.world.GameWorld.connectClosed(GameWorld.java:232)
+	at game.server.world.login.handler.LWConnectClosedHandler.action(LWConnectClosedHandler.java:31)
+	at game.core.command.CommandProcessor.doCommand(CommandProcessor.java:127)
+	at game.core.command.CommandProcessor$1.run(CommandProcessor.java:108)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2018-04-17 15:44:33 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:44:33 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:46:53 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:51:23 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:51:23 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:51:23 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:51:23 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:51:53 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:51:55 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:51:55 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:51:55 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:51:55 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 15:53:33 ERROR](ServerConfig.java:137)unknow node [game-server-types]
+[2018-04-17 15:55:19 ERROR](LoginService.java:707)userName = d9c3b884-2850-4a5c-b4b1-e2a0385fa20c 已经创建过角色
+[2018-04-17 15:55:21 ERROR](LoginService.java:707)userName = ecca9daa-33e7-41ff-b684-028f9e215b0d 已经创建过角色
+[2018-04-17 15:55:38 ERROR](GameLine.java:606)doCommand error! cause:
+java.lang.IllegalArgumentException: delay must > 0
+	at game.core.timer.TimerEvent.<init>(TimerEvent.java:48)
+	at game.server.world.room.bean.ZJHRoom$SpeakerActionTimer.<init>(ZJHRoom.java:128)
+	at game.server.world.room.bean.ZJHRoom.createActionDelayStart(ZJHRoom.java:401)
+	at game.server.world.room.bean.ZJHRoom.nextplayerSpeekAction(ZJHRoom.java:446)
+	at game.server.world.room.bean.ZJHRoom.OnUserLookCard(ZJHRoom.java:798)
+	at game.server.world.room.bean.ZJHRoom.OnGameMessage(ZJHRoom.java:597)
+	at game.server.world.room.RoomManager.reqPlayerAction(RoomManager.java:489)
+	at game.server.world.room.handler.ReqActionHandler.action(ReqActionHandler.java:27)
+	at game.core.command.CommandProcessor.doCommand(CommandProcessor.java:127)
+	at game.core.command.CommandProcessor$1.run(CommandProcessor.java:108)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2018-04-17 15:59:59 ERROR](ServerConfig.java:137)unknow node [game-server-types]
+[2018-04-17 16:00:22 ERROR](LoginService.java:707)userName = d9c3b884-2850-4a5c-b4b1-e2a0385fa20c 已经创建过角色
+[2018-04-17 16:00:23 ERROR](LoginService.java:707)userName = ecca9daa-33e7-41ff-b684-028f9e215b0d 已经创建过角色
+[2018-04-17 16:01:19 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:01:19 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:01:19 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:01:19 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:02:31 ERROR](LoginService.java:707)userName = aff235b1-7aa5-4034-bb76-8dbab34f8e3f 已经创建过角色
+[2018-04-17 16:02:34 ERROR](LoginService.java:707)userName = 6faac9c3-4608-403c-b116-4526facbad5c 已经创建过角色
+[2018-04-17 16:03:13 ERROR](GameLine.java:606)doCommand error! cause:
+java.lang.ArithmeticException: / by zero
+	at game.server.world.room.bean.ZJHRoom.getNextSpeekIndex(ZJHRoom.java:458)
+	at game.server.world.room.bean.ZJHRoom.nextplayerSpeekAction(ZJHRoom.java:444)
+	at game.server.world.room.bean.ZJHRoom.OnUserLookCard(ZJHRoom.java:798)
+	at game.server.world.room.bean.ZJHRoom.OnGameMessage(ZJHRoom.java:597)
+	at game.server.world.room.RoomManager.reqPlayerAction(RoomManager.java:489)
+	at game.server.world.room.handler.ReqActionHandler.action(ReqActionHandler.java:27)
+	at game.core.command.CommandProcessor.doCommand(CommandProcessor.java:127)
+	at game.core.command.CommandProcessor$1.run(CommandProcessor.java:108)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2018-04-17 16:03:30 ERROR](GameLine.java:606)doCommand error! cause:
+java.lang.ArithmeticException: / by zero
+	at game.server.world.room.bean.ZJHRoom.getNextSpeekIndex(ZJHRoom.java:458)
+	at game.server.world.room.bean.ZJHRoom.nextplayerSpeekAction(ZJHRoom.java:444)
+	at game.server.world.room.bean.ZJHRoom.OnUserLookCard(ZJHRoom.java:798)
+	at game.server.world.room.bean.ZJHRoom.OnGameMessage(ZJHRoom.java:597)
+	at game.server.world.room.RoomManager.reqPlayerAction(RoomManager.java:489)
+	at game.server.world.room.handler.ReqActionHandler.action(ReqActionHandler.java:27)
+	at game.core.command.CommandProcessor.doCommand(CommandProcessor.java:127)
+	at game.core.command.CommandProcessor$1.run(CommandProcessor.java:108)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2018-04-17 16:03:30 ERROR](GameLine.java:606)doCommand error! cause:
+java.lang.ArithmeticException: / by zero
+	at game.server.world.room.bean.ZJHRoom.getNextSpeekIndex(ZJHRoom.java:458)
+	at game.server.world.room.bean.ZJHRoom.nextplayerSpeekAction(ZJHRoom.java:444)
+	at game.server.world.room.bean.ZJHRoom.OnUserLookCard(ZJHRoom.java:798)
+	at game.server.world.room.bean.ZJHRoom.OnGameMessage(ZJHRoom.java:597)
+	at game.server.world.room.RoomManager.reqPlayerAction(RoomManager.java:489)
+	at game.server.world.room.handler.ReqActionHandler.action(ReqActionHandler.java:27)
+	at game.core.command.CommandProcessor.doCommand(CommandProcessor.java:127)
+	at game.core.command.CommandProcessor$1.run(CommandProcessor.java:108)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2018-04-17 16:03:42 ERROR](GameLine.java:606)doCommand error! cause:
+java.lang.ArithmeticException: / by zero
+	at game.server.world.room.bean.ZJHRoom.getNextSpeekIndex(ZJHRoom.java:458)
+	at game.server.world.room.bean.ZJHRoom.nextplayerSpeekAction(ZJHRoom.java:444)
+	at game.server.world.room.bean.ZJHRoom.OnUserLookCard(ZJHRoom.java:798)
+	at game.server.world.room.bean.ZJHRoom.OnGameMessage(ZJHRoom.java:597)
+	at game.server.world.room.RoomManager.reqPlayerAction(RoomManager.java:489)
+	at game.server.world.room.handler.ReqActionHandler.action(ReqActionHandler.java:27)
+	at game.core.command.CommandProcessor.doCommand(CommandProcessor.java:127)
+	at game.core.command.CommandProcessor$1.run(CommandProcessor.java:108)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2018-04-17 16:04:12 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:04:12 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:04:12 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:04:12 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:04:12 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:04:12 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:04:12 ERROR](RoomManager.java:139)获取房间类型对应的房间列表失败：无类型
+[2018-04-17 16:04:12 ERROR](GameWorld.java:286)doCommand error! cause:
+java.lang.NullPointerException
+	at game.server.world.room.RoomManager.getPlayerPlaceRoom(RoomManager.java:463)
+	at game.server.world.room.RoomManager.resPlayerOnOffLine(RoomManager.java:478)
+	at game.server.world.room.RoomManager.offlineProcess(RoomManager.java:505)
+	at game.server.world.GameWorld.connectClosed(GameWorld.java:232)
+	at game.server.world.login.handler.LWConnectClosedHandler.action(LWConnectClosedHandler.java:31)
+	at game.core.command.CommandProcessor.doCommand(CommandProcessor.java:127)
+	at game.core.command.CommandProcessor$1.run(CommandProcessor.java:108)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2018-04-17 16:04:12 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:04:12 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:05:09 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:07:46 ERROR](ServerConfig.java:137)unknow node [game-server-types]
+[2018-04-17 16:08:15 ERROR](LoginService.java:707)userName = d9c3b884-2850-4a5c-b4b1-e2a0385fa20c 已经创建过角色
+[2018-04-17 16:08:18 ERROR](LoginService.java:707)userName = ecca9daa-33e7-41ff-b684-028f9e215b0d 已经创建过角色
+[2018-04-17 16:08:20 ERROR](LoginService.java:707)userName = aff235b1-7aa5-4034-bb76-8dbab34f8e3f 已经创建过角色
+[2018-04-17 16:10:12 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:10:12 ERROR](RoomManager.java:139)获取房间类型对应的房间列表失败：无类型
+[2018-04-17 16:10:12 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:10:12 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:10:12 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:10:12 ERROR](GameWorld.java:286)doCommand error! cause:
+java.lang.NullPointerException
+	at game.server.world.room.RoomManager.getPlayerPlaceRoom(RoomManager.java:463)
+	at game.server.world.room.RoomManager.resPlayerOnOffLine(RoomManager.java:478)
+	at game.server.world.room.RoomManager.offlineProcess(RoomManager.java:505)
+	at game.server.world.GameWorld.connectClosed(GameWorld.java:232)
+	at game.server.world.login.handler.LWConnectClosedHandler.action(LWConnectClosedHandler.java:31)
+	at game.core.command.CommandProcessor.doCommand(CommandProcessor.java:127)
+	at game.core.command.CommandProcessor$1.run(CommandProcessor.java:108)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2018-04-17 16:10:12 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:10:12 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:12:58 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:17:01 ERROR](ServerConfig.java:137)unknow node [game-server-types]
+[2018-04-17 16:17:47 ERROR](LoginService.java:707)userName = d9c3b884-2850-4a5c-b4b1-e2a0385fa20c 已经创建过角色
+[2018-04-17 16:17:48 ERROR](LoginService.java:707)userName = ecca9daa-33e7-41ff-b684-028f9e215b0d 已经创建过角色
+[2018-04-17 16:17:50 ERROR](LoginService.java:707)userName = aff235b1-7aa5-4034-bb76-8dbab34f8e3f 已经创建过角色
+[2018-04-17 16:17:51 ERROR](LoginService.java:707)userName = 6faac9c3-4608-403c-b116-4526facbad5c 已经创建过角色
+[2018-04-17 16:21:42 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:21:42 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:21:42 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:21:42 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:21:42 ERROR](RoomManager.java:139)获取房间类型对应的房间列表失败：无类型
+[2018-04-17 16:21:42 ERROR](GameWorld.java:286)doCommand error! cause:
+java.lang.NullPointerException
+	at game.server.world.room.RoomManager.getPlayerPlaceRoom(RoomManager.java:463)
+	at game.server.world.room.RoomManager.resPlayerOnOffLine(RoomManager.java:478)
+	at game.server.world.room.RoomManager.offlineProcess(RoomManager.java:505)
+	at game.server.world.GameWorld.connectClosed(GameWorld.java:232)
+	at game.server.world.login.handler.LWConnectClosedHandler.action(LWConnectClosedHandler.java:31)
+	at game.core.command.CommandProcessor.doCommand(CommandProcessor.java:127)
+	at game.core.command.CommandProcessor$1.run(CommandProcessor.java:108)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2018-04-17 16:21:42 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:21:42 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:22:09 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:27:09 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:32:09 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:37:09 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:42:09 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:46:22 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:46:22 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:46:23 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:46:23 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:47:09 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:52:09 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 16:57:09 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 17:02:09 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 17:04:05 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 17:04:05 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 17:04:05 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 17:04:05 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 17:05:02 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 17:05:02 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 17:05:02 ERROR](RoomManager.java:139)获取房间类型对应的房间列表失败：无类型
+[2018-04-17 17:05:02 ERROR](GameWorld.java:286)doCommand error! cause:
+java.lang.NullPointerException
+	at game.server.world.room.RoomManager.getPlayerPlaceRoom(RoomManager.java:463)
+	at game.server.world.room.RoomManager.resPlayerOnOffLine(RoomManager.java:478)
+	at game.server.world.room.RoomManager.offlineProcess(RoomManager.java:505)
+	at game.server.world.GameWorld.connectClosed(GameWorld.java:232)
+	at game.server.world.login.handler.LWConnectClosedHandler.action(LWConnectClosedHandler.java:31)
+	at game.core.command.CommandProcessor.doCommand(CommandProcessor.java:127)
+	at game.core.command.CommandProcessor$1.run(CommandProcessor.java:108)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2018-04-17 17:05:20 ERROR](ServerConfig.java:137)unknow node [game-server-types]
+[2018-04-17 17:05:39 ERROR](LoginService.java:707)userName = d9c3b884-2850-4a5c-b4b1-e2a0385fa20c 已经创建过角色
+[2018-04-17 17:05:41 ERROR](LoginService.java:707)userName = ecca9daa-33e7-41ff-b684-028f9e215b0d 已经创建过角色
+[2018-04-17 17:07:55 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 17:07:55 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 17:08:02 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 17:08:02 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 17:09:14 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 17:09:14 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 17:09:14 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 17:09:14 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 17:10:28 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 17:15:28 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 17:20:28 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 17:25:28 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-17 17:30:28 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境

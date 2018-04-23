@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://v3.bootcss.com/examples/dashboard/ -->
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="images/icon.ico">
+
+    <title>查看兑换码表</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../css/dashboard.css" rel="stylesheet">
+    
+    <!-- ============Bootstrap core JavaScript========= -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery.min.js"></script> 
+    <script src="../../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+   <!-- <script src="./Dashboard Template for Bootstrap_files/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<script type="text/javascript">
+	$(function(){
+		$("#getAllBatch").click(function(){
+			$.get('../../getKeyAttrList','',function(data){
+				if(data == "error"){
+					alert('info:未获取到激活码批次数据');
+				}else{
+					var list = eval("("+data+")");
+					var keyHtml = "";
+					for(var i=0;i<list.length;i++){
+						var batchInfo = list[i];
+						var descStr = batchInfo.descStr;
+						var useServer = batchInfo.useServer;
+						var fgi = batchInfo.fgi;
+ 						var fgiArr = new Array();
+						fgiArr[0] = "所有";
+						fgiArr[1] = "IOS";
+						fgiArr[2] = "安卓"; 
+						var fgiStr = fgiArr[fgi];
+						var platform = batchInfo.platform;
+						var generateNum = batchInfo.generateNum;
+						var generateTime = batchInfo.generateTime;
+						var generateDate = new Date(generateTime); 
+						var deadTime = batchInfo.deadTime;
+						var deadDate = new Date(deadTime); 
+						var reward = batchInfo.reward;
+						
+						keyHtml +='<td>'+descStr+'</td>';
+						keyHtml +='<td>'+useServer+'</td>';
+						keyHtml +='<td>'+fgiStr+'</td>';
+						keyHtml +='<td>'+platform+'</td>';
+						keyHtml +='<td>'+generateNum+'</td>'; toLocaleString
+						keyHtml +='<td>'+(generateDate.toLocaleDateString())+'</td>';
+						keyHtml +='<td>'+(deadDate.toLocaleDateString())+'</td>';
+						keyHtml +='<td>'+reward+'</td>';
+						keyHtml +='<td><button type="button" id="batch_'+batchInfo.batch+'" onclick="exportExcel(this.id)" class="btn btn-danger btn-sm">导出激活码</button></td>';
+						keyHtml = "<tr>" + keyHtml + "</tr>";
+					}
+					$("#allKeyInfo").html(keyHtml);
+				}
+			},'text');	
+		});
+	});
+	
+	function exportExcel(strId){
+		var strs= new Array(); //定义一数组 
+		strs=strId.split("_"); //字符分割 
+		var id = strs[1];
+		/* $.get('../../exportExcel?batch='+id,'',function(data){
+			alert(data);
+		},'text'); */
+		window.location.assign("../../exportExcel?batch="+id);
+	}
+	
+</script>
+</head>
+
+  <body>
+      <div class="row">
+        <div class="col-md-12 main">
+          <h1 class="page-header">激活码查询</h1>
+         <div class="row"> 
+			<label class="col-xs-1">操作</label>
+			<div class="col-xs-4">
+				<button type="button" id="getAllBatch" class="btn btn-success btn-block">获取激活码信息</button>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+		<div class="col-xs-11"> 
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+              <thead>
+                <tr class="info">
+                  <th>名称</th>
+                  <th>区服(0-全服)</th>
+                  <th>渠道</th>
+                  <th>平台</th>
+                  <th>生成数量</th>
+                  <th>生成时间</th>
+				  <th>过期时间</th>
+				  <th>奖励数据</th>
+				  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody id="allKeyInfo">
+              </tbody>
+            </table>
+          </div>
+         </div>
+         </div>
+       </div>
+     </div>
+      
+<!--   	<!-- 弹出服务器列表复选框 
+	<div class="modal fade" id="selectServer" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">选择服务器</h4>
+				</div>
+				<div class="modal-body">
+					body 
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">确定选择</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+			/.modal-content
+		</div>
+		/.modal-dialog
+	</div>  -->   
+  </body>
+  </html>

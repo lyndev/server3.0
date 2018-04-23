@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="keyTable">
+    <resultMap id="keyBean" type="game.keygenerator.servlet.KeyBean">
+	<result column="serialNo" property="serialNo" jdbcType="INTEGER" />
+	<result column="serialType" property="serialType" jdbcType="INTEGER" />
+	<result column="createTime" property="createTime" jdbcType="TIMESTAMP" />
+	<result column="used" property="used" jdbcType="INTEGER" />
+	<result column="useTime" property="useTime" jdbcType="TIMESTAMP" />
+	<result column="roleId" property="roleId" jdbcType="INTEGER" />
+    </resultMap>
+	
+    <insert id="insert" parameterType="game.keygenerator.servlet.KeyBean" >
+	INSERT INTO keyTable(serialNo, serialType, createTime, used, useTime, roleId)
+	VALUES(
+	#{serialNo, jdbcType=INTEGER},
+	#{serialType, jdbcType=INTEGER},
+	#{createTime, jdbcType=TIMESTAMP},
+	#{used, jdbcType=INTEGER},
+	#{useTime, jdbcType=TIMESTAMP},
+	#{roleId, jdbcType=INTEGER}
+	)
+    </insert>
+	
+    <update id="update" parameterType="game.keygenerator.servlet.KeyBean" >
+	update keyTable set
+	serialType = #{serialType, jdbcType=INTEGER},
+	createTime = #{createTime, jdbcType=TIMESTAMP},
+	used = #{used, jdbcType=INTEGER},
+	useTime = #{useTime, jdbcType=TIMESTAMP},
+	roleId = #{roleId, jdbcType=INTEGER}
+	where serialNo = #{serialNo, jdbcType=INTEGER}
+    </update>
+
+    <select id="selectByKey" parameterType="long" resultMap="keyBean">
+	SELECT serialNo, serialType, createTime, used, useTime, roleId
+	FROM keyTable
+	WHERE serialNo = #{serialNo, jdbcType=INTEGER}
+    </select>
+</mapper>	

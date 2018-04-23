@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 每条客户端消息及其对应的服务端处理器配置文件 -->
+
+<messages>
+    
+    <msg id="101101" message="game.message.LoginMessage$ReqLogin" handler="gametestclient.login.handler.ReqLoginHandler" />
+    <msg id="101101" message="game.message.LoginMessage$ReqCreateRole" handler="gametestclient.login.handler.ReqCreateRoleHandler" />
+    <msg id="102101" message="game.message.LoginMessage$ReqReconnect" handler="gametestclient.login.handler.ReqReconnectHandler" />
+    
+</messages>

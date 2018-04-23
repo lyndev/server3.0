@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_action_time">
+    <resultMap id="bean" type="game.data.bean.q_action_timeBean" >
+            <result column="q_id" property="q_id" jdbcType="INTEGER" />
+            <result column="name" property="name" jdbcType="VARCHAR" />
+            <result column="stand" property="stand" jdbcType="INTEGER" />
+            <result column="run" property="run" jdbcType="INTEGER" />
+            <result column="attack1" property="attack1" jdbcType="INTEGER" />
+            <result column="attack2" property="attack2" jdbcType="INTEGER" />
+            <result column="chuchang" property="chuchang" jdbcType="INTEGER" />
+            <result column="yun" property="yun" jdbcType="INTEGER" />
+            <result column="hit" property="hit" jdbcType="INTEGER" />
+            <result column="win" property="win" jdbcType="INTEGER" />
+            <result column="die" property="die" jdbcType="INTEGER" />
+            <result column="skill1" property="skill1" jdbcType="INTEGER" />
+            <result column="skill2" property="skill2" jdbcType="INTEGER" />
+            <result column="skill3" property="skill3" jdbcType="INTEGER" />
+            <result column="skill4" property="skill4" jdbcType="INTEGER" />
+            <result column="skill5" property="skill5" jdbcType="INTEGER" />
+            <result column="skill6" property="skill6" jdbcType="INTEGER" />
+            <result column="skill7" property="skill7" jdbcType="INTEGER" />
+            <result column="skill8" property="skill8" jdbcType="INTEGER" />
+            <result column="skill9" property="skill9" jdbcType="INTEGER" />
+            <result column="skill10" property="skill10" jdbcType="INTEGER" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_action_time
+    </select>
+</mapper>

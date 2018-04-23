@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_hero_exp">
+    <resultMap id="bean" type="game.data.bean.q_hero_expBean" >
+            <result column="q_id" property="q_id" jdbcType="INTEGER" />
+            <result column="q_leader_exp" property="q_leader_exp" jdbcType="INTEGER" />
+            <result column="q_card_exp" property="q_card_exp" jdbcType="INTEGER" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_hero_exp
+    </select>
+</mapper>

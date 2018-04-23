@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_monster_level_attribute">
+    <resultMap id="bean" type="game.data.bean.q_monster_level_attributeBean" >
+            <result column="q_Lv" property="q_Lv" jdbcType="INTEGER" />
+            <result column="q_hp" property="q_hp" jdbcType="INTEGER" />
+            <result column="q_phy_atk" property="q_phy_atk" jdbcType="INTEGER" />
+            <result column="q_magic_atk" property="q_magic_atk" jdbcType="INTEGER" />
+            <result column="q_phy_def" property="q_phy_def" jdbcType="INTEGER" />
+            <result column="q_magic_def" property="q_magic_def" jdbcType="INTEGER" />
+            <result column="q_hit" property="q_hit" jdbcType="INTEGER" />
+            <result column="q_phy_crit" property="q_phy_crit" jdbcType="INTEGER" />
+            <result column="q_magic_crit" property="q_magic_crit" jdbcType="INTEGER" />
+            <result column="q_phy_evade" property="q_phy_evade" jdbcType="INTEGER" />
+            <result column="q_magic_evade" property="q_magic_evade" jdbcType="INTEGER" />
+            <result column="q_crit_dmg" property="q_crit_dmg" jdbcType="INTEGER" />
+            <result column="q_phy_Pierce" property="q_phy_Pierce" jdbcType="INTEGER" />
+            <result column="q_magic_Pierce" property="q_magic_Pierce" jdbcType="INTEGER" />
+            <result column="q_drains" property="q_drains" jdbcType="INTEGER" />
+            <result column="q_toughness" property="q_toughness" jdbcType="INTEGER" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_monster_level_attribute
+    </select>
+</mapper>

@@ -1,0 +1,8 @@
+{
+    "db": [
+	{
+	    "serverId": 2,
+	    "configFile": "db-game-log-config-2.xml"
+	}
+    ]
+}

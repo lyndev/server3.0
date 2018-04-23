@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_position">
+    <resultMap id="bean" type="game.data.bean.q_positionBean" >
+            <result column="q_posId" property="q_posId" jdbcType="INTEGER" />
+            <result column="q_posX" property="q_posX" jdbcType="INTEGER" />
+            <result column="q_posY" property="q_posY" jdbcType="INTEGER" />
+            <result column="q_annotation" property="q_annotation" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_position
+    </select>
+</mapper>

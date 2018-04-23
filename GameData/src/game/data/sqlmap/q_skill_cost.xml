@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_skill_cost">
+    <resultMap id="bean" type="game.data.bean.q_skill_costBean" >
+            <result column="q_skill_level" property="q_skill_level" jdbcType="INTEGER" />
+            <result column="q_skill_cost1" property="q_skill_cost1" jdbcType="INTEGER" />
+            <result column="q_skill_cost2" property="q_skill_cost2" jdbcType="INTEGER" />
+            <result column="q_skill_cost3" property="q_skill_cost3" jdbcType="INTEGER" />
+            <result column="q_skill_cost4" property="q_skill_cost4" jdbcType="INTEGER" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_skill_cost
+    </select>
+</mapper>

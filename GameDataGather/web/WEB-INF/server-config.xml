@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<server>
+    <game-logger game-id="172"
+                 mongodb-host="123.59.44.67"
+                 mongodb-port="27017"
+                 mongodb-name="jxzz_game_log"
+                 mongodb-user=""
+                 mongodb-passwd="" />
+</server>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="mail">
+    <resultMap id="mailBean" type="game.server.db.game.bean.MailBean">
+	<result column="id" property="id" jdbcType="VARCHAR" />
+	<result column="senderName" property="senderName" jdbcType="VARCHAR" />
+	<result column="type" property="type" jdbcType="INTEGER" />
+	<result column="receiverId" property="receiverId" jdbcType="VARCHAR" />
+	<result column="receiverName" property="receiverName" jdbcType="VARCHAR" />
+	<result column="accessory" property="accessory" jdbcType="INTEGER" />
+	<result column="isRead" property="isRead" jdbcType="INTEGER" />
+	<result column="sendTime" property="sendTime" jdbcType="INTEGER" />
+	<result column="deadLine" property="deadLine" jdbcType="INTEGER" />
+	<result column="mailData" property="mailData" jdbcType="LONGVARCHAR" />
+    </resultMap>
+
+    <insert id="insert" parameterType="game.server.db.game.bean.MailBean" >
+	INSERT INTO mail (id, senderName, type, receiverId, receiverName, accessory, isRead, sendTime, deadLine, mailData)
+	VALUES (
+	#{id, jdbcType=VARCHAR},
+	#{senderName, jdbcType=VARCHAR},
+	#{type, jdbcType=INTEGER},
+	#{receiverId, jdbcType=VARCHAR},
+	#{receiverName, jdbcType=VARCHAR},
+	#{accessory, jdbcType=INTEGER},
+	#{isRead, jdbcType=INTEGER},
+	#{sendTime, jdbcType=INTEGER},
+	#{deadLine, jdbcType=INTEGER},
+	#{mailData, jdbcType=LONGVARCHAR})
+    </insert>
+
+    <update id="update" parameterType="game.server.db.game.bean.MailBean" >
+	update mail set
+	senderName = #{senderName, jdbcType=VARCHAR},
+	type = #{type, jdbcType=INTEGER},
+	receiverId = #{receiverId, jdbcType=VARCHAR},
+	receiverName = #{receiverName, jdbcType=VARCHAR},
+	accessory = #{accessory, jdbcType=INTEGER},
+	isRead = #{isRead, jdbcType=INTEGER},
+	sendTime = #{sendTime, jdbcType=INTEGER},
+	deadLine = #{deadLine, jdbcType=INTEGER},
+	mailData = #{mailData, jdbcType=LONGVARCHAR}
+	where id = #{id, jdbcType=VARCHAR}
+    </update>
+
+    <delete id="delete" parameterType="string" >
+	delete from mail
+	where id = #{id, jdbcType=VARCHAR}
+    </delete>
+
+    <select id="selectByMailId" parameterType="string" resultMap="mailBean">
+	SELECT id, senderName, type, receiverId, receiverName, accessory, isRead, sendTime, deadLine, mailData
+	FROM mail
+	WHERE id = #{id, jdbcType=VARCHAR}
+    </select>
+
+    <select id="selectByRoleId" parameterType="string" resultMap="mailBean">
+	SELECT id, senderName, type, receiverId, receiverName, accessory, isRead, sendTime, deadLine, mailData
+	FROM mail
+	WHERE receiverId = #{receiverId, jdbcType=VARCHAR}
+    </select>
+
+    <select id="selectByRoleName" parameterType="string" resultMap="mailBean">
+	SELECT id, senderName, type, receiverId, receiverName, accessory, isRead, sendTime, deadLine, mailData
+	FROM mail
+	WHERE recerverName = #{receiverName, jdbcType=VARCHAR}
+    </select>
+
+</mapper>

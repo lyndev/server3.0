@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_leader_upstar">
+    <resultMap id="bean" type="game.data.bean.q_leader_upstarBean" >
+            <result column="q_order" property="q_order" jdbcType="INTEGER" />
+            <result column="q_star_lv" property="q_star_lv" jdbcType="INTEGER" />
+            <result column="q_cost" property="q_cost" jdbcType="VARCHAR" />
+            <result column="q_desc" property="q_desc" jdbcType="VARCHAR" />
+            <result column="q_hp" property="q_hp" jdbcType="INTEGER" />
+            <result column="q_pAtk" property="q_pAtk" jdbcType="INTEGER" />
+            <result column="q_mAtk" property="q_mAtk" jdbcType="INTEGER" />
+            <result column="q_pDef" property="q_pDef" jdbcType="INTEGER" />
+            <result column="q_mDef" property="q_mDef" jdbcType="INTEGER" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_leader_upstar
+    </select>
+</mapper>

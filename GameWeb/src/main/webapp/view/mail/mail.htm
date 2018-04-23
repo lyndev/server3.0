@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://v3.bootcss.com/examples/dashboard/ -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="images/icon.ico">
+
+<title>游戏管理平台</title>
+
+<!-- Bootstrap core CSS -->
+<link href="../../css/bootstrap.min.css" rel="stylesheet">
+<link href="../../css/bootstrapTimer/bootstrap-datetimepicker.min.css"
+	rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="../../css/dashboard.css" rel="stylesheet">
+
+<!-- ============Bootstrap core JavaScript========= -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../../js/jquery.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/bootstrapTimer/bootstrap-datetimepicker.js"></script>
+<script src="../../js/bootstrapTimer/bootstrap-datetimepicker.fr.js"></script>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
+<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<!-- <script src="./Dashboard Template for Bootstrap_files/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<script type="text/javascript">
+	$(function() {
+		$("#sendMail").click(function(){
+			var serverIds = [];
+			$('input[name="serverBox"]:checked').each(function(){ 
+				serverIds.push($(this).val()); 
+			}); 
+			if(serverIds.length == 0){
+				alert('请选择你要发送的服务器');
+				return;
+			}
+			var sendDate=$("#sendDate").val();
+			var deadDate=$("#deadDate").val();
+			var startTime=new Date(sendDate);
+			var endTime=new Date(deadDate);
+			if(deadDate =='' || startTime>endTime){
+				alert("发送时间大于结束时间")
+				$("#deadDate").attr("value","");
+				return;
+			}
+
+			var sendType = $('input[name="sendType"]:checked');
+			if(!sendType.length){
+				alert("还没选择发送方式");
+				return;
+			}
+			sendType = sendType.val(); //1-所有玩家，2-玩家userId：userId_userId，3-等级范围：min_max
+			var parameter = '';
+			if(sendType == 14){
+				var userIds = $("#userIds").val();
+				if(userIds == ''){
+					alert("没有添加玩家ID.");
+					return;
+				}
+				parameter = userIds;
+			}else if (sendType == 3) {
+				var min = $("#minLevel").val();
+				var max = $("#maxLevel").val();
+				if(min == '' || max == '' || min > max){
+					alert("没有选择等级区间或者 min > max.");
+					return;
+				}
+				parameter = min+"_"+max;
+			};
+
+			var mailTitle = $("#mailTitle").val();
+			var mailContent = $("#mailContent").val();
+			var senderName = $("#senderName").val();
+			if(mailTitle == '' || mailContent == '' || senderName ==''){
+				alert("邮件标题或者内容未填写");
+				return;				
+			}
+			var resStr = $("#resStr").val();
+			var itemStr = $("#itemStr").val();
+			if(!confirm("确认继续操作吗？")){
+		        return false;
+		    }
+			var sendData = {
+				"serverIds":serverIds.join("_"),
+				"type":sendType,
+				"parameter":parameter,
+				"sendTime":sendDate,
+				"deadTime":deadDate,
+				"title":mailTitle,
+				"content":mailContent,
+				"senderName":senderName,
+				"resStr":resStr,
+				"itemStr":itemStr,
+			};
+			
+			$.post('../../sendMail',sendData,function(data){
+	   					alert(data);
+	   				}
+			,'text');
+		});
+		
+		
+		//checkBox全选/全不选
+		$("#all").click(function(){
+			var val = this.checked;
+			$("input[name='serverBox']").each(function() {
+				if(!this.disabled){
+				 	this.checked = val;
+				}
+			}); 
+		});
+		
+		var bRequestServer = false;
+		$("#getServerList").click(function() {
+			if(bRequestServer){
+				return;
+			}
+			$.post('../../serverList','',function(data){
+   				if(data == "error"){
+					alert('获取服务器列表错误');
+				}else{
+					var list = eval("("+data+")");
+					var serverHtml = "";
+					for(var i=0;i<list.length;i++){
+						var serverInfo = list[i];
+						var serverId = "<td>"+serverInfo.serverId+"</td>";
+						var serverName = "<td>"+serverInfo.name+"</td>";
+						var statusArr = new Array()
+						statusArr['open'] = "开启";
+						statusArr['close'] = "关闭";
+						statusArr['debug'] = "维护";
+						statusArr['hide'] = "隐藏";
+						var status = "<td>"+statusArr[serverInfo.status]+"</td>";
+						var handler = '';
+						if(serverInfo.status != 'hide'){
+							if(serverInfo.status == 'close'){
+								handler = "<td><input type='checkbox' name='serverBox' value='"+serverInfo.serverId+"' disabled>";
+							}else{
+								handler = "<td><input type='checkbox' name='serverBox' value='"+serverInfo.serverId+"'>";										
+							}
+						}
+						serverHtml = serverHtml + "<tr>" + serverId + serverName + status + handler + "</tr>";
+					}
+					$("#serverList").html(serverHtml)
+				}
+   				bRequestServer = true;
+   			},'text');
+		});
+		//时间插件
+		$(".datetimepicker").datetimepicker({
+			format : 'yyyy-mm-dd hh:ii'
+		});
+		
+		$("#addResource").click(function(){
+			var resStr = $("#resStr").val();
+			var id = $("#resId").val();
+			var num = $("#resNum").val();
+			resStr += (id+"_"+num+";")
+			$("#resStr").html(resStr);
+		});
+		
+		$("#addItem").click(function(){
+			var itemStr = $("#itemStr").val();
+			var id = $("#itemId").val();
+			var num = $("#itemNum").val();
+			itemStr += (id+"_"+num+";")
+			$("#itemStr").html(itemStr);
+			$("#itemId").val() = "";
+		});
+		
+		$("#addUserId").click(function(){
+			var userIds = $("#userIds").val();
+			var id = $("#userId").val();
+			if(id == ''){
+				alert("请填写玩家ID。")
+				return;
+			}
+			userIds += (id+"_");
+			$("#userIds").html(userIds);
+		});
+		
+		$("[data-toggle='popover']").popover();
+	});
+</script>
+</head>
+
+<body>
+	<div class="row">
+		<div class="col-md-12 main">
+			<h1 class="page-header">邮件管理</h1>
+			<div class="row">
+				<form class="form-horizontal" role="form">
+					<div class="form-group">
+						<label for="inputEmail3" class="col-xs-2 control-label">服务器选择</label>
+						<div class="col-xs-5">
+							<button type="button" class="btn btn-success btn-block" id="getServerList"
+								data-toggle="modal" data-target="#selectServer">选择服务器</button>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-xs-2 control-label">发送时间</label>
+						<div class="col-xs-5">
+							<input type="text" class="form-control datetimepicker"
+								id="sendDate" readonly>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-xs-2 control-label">持续时间</label>
+						<div class="col-xs-5">
+							<input type="text" class="form-control datetimepicker"
+								id="deadDate" readonly>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-xs-2 control-label">发送者</label>
+						<div class="col-xs-5">
+							<input type="text" class="form-control" id="senderName" value="系统管理员" >
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="toOther" class="col-xs-2 control-label">发送对象</label>
+						<div class="col-xs-5">
+							<label class="checkbox-inline">
+						      <input type="radio" name="sendType" value="1"> 所有玩家
+						   </label>
+						   <label class="checkbox-inline">
+						      <input type="radio" name="sendType" value="14" data-toggle="modal" data-target="#sendByUser"> 玩家ID
+						   </label>
+						   <label class="checkbox-inline">
+						      <input type="radio" name="sendType" value="3" data-toggle="modal" data-target="#sendByLevel"> 等级区间
+						   </label>
+						</div>
+					</div>
+					<hr>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-xs-2 control-label">邮件标题</label>
+						<div class="col-xs-5">
+							<input type="text" class="form-control" id="mailTitle">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-xs-2 control-label">邮件内容</label>
+						<div class="col-xs-5">
+							<textarea class="form-control" rows="5" id="mailContent"></textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-xs-2 control-label">附件</label>
+						<div class="col-xs-5">
+							<div class="tabbable" id="tabs-967303">
+								<ul class="nav nav-tabs">
+									<li class="active"><a data-toggle="tab" href="#panel-674053">道具附件</a></li>
+									<li><a data-toggle="tab" href="#panel-238838">货币附件</a></li>
+								</ul>
+								<div class="tab-content">
+									<div class="tab-pane active" contenteditable="true" id="panel-674053">
+										<div class="input-group">
+										 	<span class="input-group-addon">道具ID</span>
+									      	<input type="text" class="form-control" id="itemId" placeholder="道具表、装备表、宝石表ID">
+									      	<span class="input-group-addon">数量</span>
+									      	<input type="number" class="form-control" id="itemNum">
+									      	<span class="input-group-btn">
+									        	<button class="btn btn-warning" type="button" id="addItem">添加</button>
+									      	</span>
+									    </div>
+										<textarea class="form-control" rows="2" id="itemStr"
+											data-container="body" data-toggle="popover"
+											data-placement="bottom"
+											data-content="格式：Id_数量；Id_数量" data-trigger="hover"></textarea>
+									</div>
+							
+									<div class="tab-pane" contenteditable="true" id="panel-238838">
+										<div class="input-group">
+										 	<span class="input-group-addon">货币类型</span>
+									      	<select id="resId" class="selectpicker form-control" data-style="btn-default">
+												<option value="1">金币</option>
+												<option value="2">钻石</option>
+											</select>
+									      	<span class="input-group-addon">数量</span>
+									      	<input type="number" id="resNum" class="form-control">
+									      	<span class="input-group-btn">
+									        	<button class="btn btn-info" type="button" id="addResource">添加</button>
+									      	</span>
+									    </div>
+										<textarea class="form-control" rows="2" id="resStr"
+											data-container="body" data-toggle="popover"
+											data-placement="bottom" data-content="格式：Id_数量；Id_数量（1-金币，2-钻石）"
+											data-trigger="hover"></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputEmail3" class="col-xs-2 control-label"></label>
+						<div class="col-xs-2">
+							<button type="button" class="btn btn-primary btn-block" id="lookMail">预览邮件</button>
+						</div>
+						<div class="col-xs-1"></div>
+						<div class="col-xs-2">
+							<button type="button" class="btn btn-success btn-block" id="sendMail">发送邮件</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- 弹出服务器列表复选框 -->
+	<div class="modal fade" id="selectServer" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">选择服务器</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+					  <div class="col-xs-1"></div>
+			          <div class="table-responsive col-xs-10">
+			            <table class="table table-bordered table-hover table-condensed success">
+			              <thead>
+			                <tr>
+			                  <th>服务器ID</th>
+			                  <th>服务器名称</th>
+			                  <th>服务器状态</th>
+							  <th>操作（<input type="checkbox" id="all">全选）</th>
+			                </tr>
+			              </thead>
+			              <tbody id="serverList">
+			                <!-- 服务器列表  -->			
+			              </tbody>
+			            </table>
+			          </div>
+			          <div class="col-xs-1"></div>
+			        </div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">确定选择</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	
+	<!-- 弹出发送对象：userID -->
+	<div class="modal fade" id="sendByUser" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">添加玩家ID</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-xs-12">
+							 <div class="input-group">
+							 	<span class="input-group-addon">玩家ID</span>
+						      	<input type="text" class="form-control" id="userId">
+						      	<span class="input-group-btn">
+						        	<button class="btn btn-info" type="button" id="addUserId">添加</button>
+						      	</span>
+						    </div>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="input-group">
+								<span class="input-group-addon">玩家ID</span>
+								<textarea class="form-control" rows="3" id="userIds"></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+					<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	
+	<!-- 弹出发送对象：等级区间 -->
+	<div class="modal fade" id="sendByLevel" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">选择等级区间</h4>
+				</div>
+				<div class="modal-body">
+					<!-- body  -->
+					 <div class="row">
+					 	<div class="col-xs-12">
+							<div class="input-group">
+							  <span class="input-group-addon">最小值</span>
+							  <input type="number" class="form-control" placeholder="1" id="minLevel">
+							  <span class="input-group-addon">最大值</span>
+							  <input type="number" class="form-control" placeholder="2" id="maxLevel">
+							</div>
+						</div>
+					 </div> 
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+					<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+</body>
+</html>

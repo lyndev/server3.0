@@ -1,0 +1,17 @@
+/GameCore/build/
+/GameServer/build/
+/GameCore/dist/
+/GameData/build/
+/message/build/
+/GameData/dist/
+/message/dist/
+/lib/game_log_sdk/nbproject/private/
+/GameDataGatherJsonTool/nbproject/private/
+/GenerateSvnVersion/nbproject/private/
+/ServerMonitor/nbproject/private/
+/TestRobot/nbproject/private/
+/GameDataGatherJsonTool/build/
+/GameDataGatherJsonTool/dist/
+/game-logger/dist/
+/GameServer/dist/
+/game-logger/build/

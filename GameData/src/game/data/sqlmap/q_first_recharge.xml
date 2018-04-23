@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_first_recharge">
+    <resultMap id="bean" type="game.data.bean.q_first_rechargeBean" >
+            <result column="q_id" property="q_id" jdbcType="INTEGER" />
+            <result column="q_name" property="q_name" jdbcType="VARCHAR" />
+            <result column="q_gem" property="q_gem" jdbcType="INTEGER" />
+            <result column="q_award_gem" property="q_award_gem" jdbcType="INTEGER" />
+            <result column="q_award_coin" property="q_award_coin" jdbcType="INTEGER" />
+            <result column="q_items" property="q_items" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_first_recharge
+    </select>
+</mapper>

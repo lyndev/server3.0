@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="xfBase">
+    <resultMap id="xfBaseBean" type="game.server.db.game.bean.XFBaseBean">
+	<result column="buildId" property="buildId" jdbcType="VARCHAR" />
+	<result column="userId" property="userId" jdbcType="VARCHAR" />
+	<result column="accBuildNum" property="accBuildNum" jdbcType="INTEGER" />
+	<result column="orderNum" property="orderNum" jdbcType="INTEGER" />
+	<result column="isRobot" property="isRobot" jdbcType="INTEGER" />
+	<result column="miscData" property="miscData" jdbcType="LONGVARCHAR" />
+    </resultMap>
+    
+    <resultMap id="xfDetailBean" type="game.server.db.game.bean.XFDetailBean">
+	<result column="buildId" property="buildId" jdbcType="VARCHAR" />
+	<result column="userId" property="userId" jdbcType="VARCHAR" />
+	<result column="accBuildNum" property="accBuildNum" jdbcType="INTEGER" />
+	<result column="orderNum" property="orderNum" jdbcType="INTEGER" />
+	<result column="isRobot" property="isRobot" jdbcType="INTEGER" />
+	<result column="miscData" property="miscData" jdbcType="LONGVARCHAR" />
+	<result column="playerMiscData" property="playerMiscData" jdbcType="LONGVARCHAR" />
+    </resultMap>
+
+    <insert id="insert" parameterType="game.server.db.game.bean.XFBaseBean" >
+	INSERT INTO xfBase ( buildId, userId, accBuildNum, orderNum, isRobot, miscData)
+	VALUES (
+	#{buildId, jdbcType=VARCHAR},
+	#{userId, jdbcType=VARCHAR},
+	#{accBuildNum, jdbcType=INTEGER},
+	#{orderNum, jdbcType=INTEGER},
+	#{isRobot, jdbcType=INTEGER},
+	#{miscData, jdbcType=LONGVARCHAR})
+    </insert>
+
+    <update id="update" parameterType="game.server.db.game.bean.XFBaseBean" >
+	update xfBase set
+	userId = #{userId, jdbcType=VARCHAR},
+	accBuildNum = #{accBuildNum, jdbcType=INTEGER},
+	orderNum = #{orderNum, jdbcType=INTEGER},
+	miscData = #{miscData, jdbcType=LONGVARCHAR}
+	where buildId = #{buildId, jdbcType=VARCHAR}
+    </update>
+
+    <select id="selectByBuildId" parameterType="HashMap" resultMap="xfBaseBean">
+	SELECT buildId, userId, accBuildNum, orderNum, isRobot, miscData
+	FROM xfBase
+	WHERE buildId = #{buildId, jdbcType=VARCHAR}
+    </select>
+
+    <select id="selectAll" resultType="game.server.db.game.bean.XFBaseBean">
+	SELECT buildId, userId, accBuildNum, orderNum, isRobot, miscData
+	FROM xfBase
+    </select>
+    
+    <delete id="deleteAllRobot">
+	delete from xfBase where isRobot = 1
+    </delete>
+    
+    <select id="selecAllJoinPlayer" resultMap="xfDetailBean">
+	SELECT xf.buildId, xf.userId, xf.accBuildNum, xf.orderNum, xf.isRobot, xf.miscData, r.miscData as playerMiscData
+	FROM xfBase xf 
+	inner join user u on u.userId = xf.userId
+	inner join role r on r.userId = u.userId
+    </select>
+    
+</mapper>

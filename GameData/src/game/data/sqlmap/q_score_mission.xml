@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_score_mission">
+    <resultMap id="bean" type="game.data.bean.q_score_missionBean" >
+            <result column="q_id" property="q_id" jdbcType="INTEGER" />
+            <result column="q_name" property="q_name" jdbcType="INTEGER" />
+            <result column="q_str" property="q_str" jdbcType="VARCHAR" />
+            <result column="q_show_img" property="q_show_img" jdbcType="VARCHAR" />
+            <result column="q_show_bg_img" property="q_show_bg_img" jdbcType="VARCHAR" />
+            <result column="q_unlock_level" property="q_unlock_level" jdbcType="INTEGER" />
+            <result column="q_hope_level" property="q_hope_level" jdbcType="INTEGER" />
+            <result column="q_monster_pos_id" property="q_monster_pos_id" jdbcType="INTEGER" />
+            <result column="q_exp" property="q_exp" jdbcType="INTEGER" />
+            <result column="q_leader_exp" property="q_leader_exp" jdbcType="INTEGER" />
+            <result column="q_bossIds" property="q_bossIds" jdbcType="VARCHAR" />
+            <result column="q_monsterId" property="q_monsterId" jdbcType="VARCHAR" />
+            <result column="q_drop_items" property="q_drop_items" jdbcType="VARCHAR" />
+            <result column="q_map_id" property="q_map_id" jdbcType="INTEGER" />
+            <result column="q_time" property="q_time" jdbcType="INTEGER" />
+            <result column="q_energy" property="q_energy" jdbcType="INTEGER" />
+            <result column="q_normal_score" property="q_normal_score" jdbcType="INTEGER" />
+            <result column="q_elite_score" property="q_elite_score" jdbcType="INTEGER" />
+            <result column="q_boss_score" property="q_boss_score" jdbcType="INTEGER" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_score_mission
+    </select>
+</mapper>

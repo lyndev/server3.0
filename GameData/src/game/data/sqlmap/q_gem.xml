@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_gem">
+    <resultMap id="bean" type="game.data.bean.q_gemBean" >
+            <result column="q_id" property="q_id" jdbcType="INTEGER" />
+            <result column="q_name" property="q_name" jdbcType="INTEGER" />
+            <result column="q_tiny_icon" property="q_tiny_icon" jdbcType="INTEGER" />
+            <result column="q_gem_color" property="q_gem_color" jdbcType="INTEGER" />
+            <result column="q_gem_attrType" property="q_gem_attrType" jdbcType="INTEGER" />
+            <result column="q_gem_level" property="q_gem_level" jdbcType="INTEGER" />
+            <result column="q_describe" property="q_describe" jdbcType="INTEGER" />
+            <result column="q_describe1" property="q_describe1" jdbcType="VARCHAR" />
+            <result column="q_default" property="q_default" jdbcType="INTEGER" />
+            <result column="q_fragment" property="q_fragment" jdbcType="INTEGER" />
+            <result column="q_max" property="q_max" jdbcType="INTEGER" />
+            <result column="q_sell_confirm" property="q_sell_confirm" jdbcType="INTEGER" />
+            <result column="q_sell_price" property="q_sell_price" jdbcType="INTEGER" />
+            <result column="q_log" property="q_log" jdbcType="INTEGER" />
+            <result column="q_show" property="q_show" jdbcType="INTEGER" />
+            <result column="q_get_path" property="q_get_path" jdbcType="VARCHAR" />
+            <result column="q_consumeGold" property="q_consumeGold" jdbcType="INTEGER" />
+            <result column="q_addAttr" property="q_addAttr" jdbcType="INTEGER" />
+            <result column="q_type" property="q_type" jdbcType="INTEGER" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_gem
+    </select>
+</mapper>

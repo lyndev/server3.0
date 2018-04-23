@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_expedition">
+    <resultMap id="bean" type="game.data.bean.q_expeditionBean" >
+            <result column="q_level_order_id" property="q_level_order_id" jdbcType="INTEGER" />
+            <result column="q_pvp_rate" property="q_pvp_rate" jdbcType="INTEGER" />
+            <result column="q_ranking_offset" property="q_ranking_offset" jdbcType="VARCHAR" />
+            <result column="q_difficulty_coefficient" property="q_difficulty_coefficient" jdbcType="INTEGER" />
+            <result column="q_box_id" property="q_box_id" jdbcType="VARCHAR" />
+            <result column="q_rank_num" property="q_rank_num" jdbcType="INTEGER" />
+            <result column="q_coin" property="q_coin" jdbcType="INTEGER" />
+            <result column="q_soul_coin" property="q_soul_coin" jdbcType="VARCHAR" />
+            <result column="q_exped_coin" property="q_exped_coin" jdbcType="INTEGER" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_expedition
+    </select>
+</mapper>

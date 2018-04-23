@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://v3.bootcss.com/examples/dashboard/ -->
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="images/icon.ico">
+
+    <title>重新加载配置表</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../css/dashboard.css" rel="stylesheet">
+    
+    <!-- ============Bootstrap core JavaScript========= -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery.min.js"></script> 
+    <script src="../../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+   <!-- <script src="./Dashboard Template for Bootstrap_files/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<script type="text/javascript">
+	$(function(){
+		//checkBox全选/全不选
+		$("#all").click(function(){
+			var val = this.checked;
+			$("input[name='serverBox']").each(function() {
+				if(!this.disabled){
+				 	this.checked = val;
+				}
+			}); 
+		});
+		
+		$("#reloadExcel").click(function(){
+			var sendType = $('input[name="sendType"]:checked');
+			if(!sendType.length){
+				alert("还没选择发送方式");
+				return;
+			}
+			sendType = sendType.val();
+			var ids = [];
+			$('input[name="serverBox"]:checked').each(function(){ 
+				ids.push($(this).val()); 
+			}); 
+			if(sendType == 2){
+				if(ids.length == 0){
+					alert("发送方式【自定义服务器】，未选择服务器");
+					return;
+				}
+			}
+			
+			if(!confirm("确认继续操作吗？"))
+		    {
+		        return false;
+		    }
+						
+			var sendData = {};
+			if(sendType == 2){
+				var serverList = ids.join("_");
+				sendData = {'sendType':sendType,'servers':serverList}				
+			}else{
+				sendData = {'sendType':sendType}	
+			}
+			$.post('../../reloadExcel',sendData,function(data){
+   					alert(data);
+   				}
+			,'text');	
+		});
+		
+		
+		//请求服务器列表
+		$("#serverList").click(function(){
+   			$.post('../../serverList','',function(data){
+   				if(data == "error"){
+					alert('获取服务器列表错误');
+				}else{
+					var list = eval("("+data+")");
+					var serverHtml = "";
+					for(var i=0;i<list.length;i++){
+						var serverInfo = list[i];
+						var serverId = "<td>"+serverInfo.serverId+"</td>";
+						var serverName = "<td>"+serverInfo.name+"</td>";
+						var serverIp = "<td>"+serverInfo.ip+"</td>";
+						var serverPort = "<td>"+serverInfo.port+"</td>";
+						var statusArr = new Array()
+						statusArr['open'] = "开启";
+						statusArr['close'] = "关闭";
+						statusArr['debug'] = "维护";
+						statusArr['hide'] = "隐藏";
+						var status = "<td>"+statusArr[serverInfo.status]+"</td>";
+						var labelArr = new Array()
+						labelArr['recommend'] = "推荐";
+						labelArr['new'] = "新服";
+						labelArr['hot'] = "火爆";
+						labelArr['full'] = "爆满";
+						labelArr['general'] = "一般";
+						var lable = "<td>"+labelArr[serverInfo.label]+"</td>";
+						var handler = '';
+						if(serverInfo.status != 'hide'){
+							if(serverInfo.status == 'close'){
+								handler = "<td><input type='checkbox' name='serverBox' value='"+serverInfo.serverId+"' disabled>";
+							}else{
+								handler = "<td><input type='checkbox' name='serverBox' value='"+serverInfo.serverId+"'>";										
+							}
+						}
+						serverHtml = serverHtml + "<tr>" + serverId + serverName + serverIp + serverPort + status + lable + handler + "</tr>";
+					}
+					$("#serverInfo").html(serverHtml)
+				}
+   			}
+		,'text');
+		});
+	});
+	
+</script>
+</head>
+
+  <body>
+      <div class="row">
+        <div class="col-md-12 main">
+          <h1 class="page-header">重新加载配置表</h1>
+         <div class="row"> 
+			<label class="col-xs-1">发送对象</label>
+			<div class="col-xs-3">
+				<label class="radio-inline">
+			      <input type="radio" name="sendType" value="1"> 所有服务器
+			   </label>
+			   <label class="radio-inline">
+			      <input type="radio" name="sendType" id="serverList" value="2"> 自选服务器
+			   </label>
+			</div>
+			<div class="col-xs-4">
+				<button type="button" id="reloadExcel" class="btn btn-success btn-block">重新加载配置表</button>
+			</div>
+		</div>
+		<hr>
+		<div class="row"> 
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+              <thead>
+                <tr class="info">
+                  <th>服务器ID</th>
+                  <th>服务器名称</th>
+                  <th>服务器IP</th>
+                  <th>服务器端口</th>
+                  <th>服务器状态</th>
+                  <th>显示状态</th>
+				  <th>操作（<input type="checkbox" id="all">全选）</th>
+                </tr>
+              </thead>
+              <tbody id="serverInfo">
+                <!-- 服务器列表  -->			
+              </tbody>
+            </table>
+          </div>
+         </div>
+       </div>
+     </div>
+      
+<!--   	<!-- 弹出服务器列表复选框 
+	<div class="modal fade" id="selectServer" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">选择服务器</h4>
+				</div>
+				<div class="modal-body">
+					body 
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">确定选择</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+			/.modal-content
+		</div>
+		/.modal-dialog
+	</div>  -->   
+  </body>
+  </html>

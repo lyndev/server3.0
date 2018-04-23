@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_expedition_node_group">
+    <resultMap id="bean" type="game.data.bean.q_expedition_node_groupBean" >
+            <result column="q_player_level" property="q_player_level" jdbcType="INTEGER" />
+            <result column="q_id_and_rate" property="q_id_and_rate" jdbcType="LONGVARCHAR" />
+            <result column="q_complete_reward" property="q_complete_reward" jdbcType="INTEGER" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_expedition_node_group
+    </select>
+</mapper>

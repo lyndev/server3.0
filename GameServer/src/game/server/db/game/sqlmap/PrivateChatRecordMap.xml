@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="privateChatRecord">
+    
+    <resultMap id="PrivateChatRecordBean" type="game.server.db.game.bean.PrivateChatRecordBean">
+	<result column="senderId" property="senderId" jdbcType="BIGINT" />
+	<result column="senderName" property="senderName" jdbcType="VARCHAR" />
+	<result column="timestamp" property="timestamp" jdbcType="BIGINT" />
+	<result column="content" property="content" jdbcType="VARCHAR" />
+	<result column="type" property="type" jdbcType="INTEGER" />
+	<result column="conversationId" property="conversationId" jdbcType="VARCHAR" />
+	<result column="receiverId" property="receiverId" jdbcType="BIGINT" />
+	<result column="vip" property="vip" jdbcType="INTEGER" />
+	<result column="isAudio" property="isAudio" jdbcType="INTEGER" />
+    </resultMap>
+
+    <insert id="insert" parameterType="game.server.db.game.bean.PrivateChatRecordBean" >
+	INSERT INTO privateChatRecord (senderId, senderName, timestamp, content, type, conversationId, receiverId, vip, isAudio)
+	VALUES (
+	#{senderId, jdbcType=BIGINT},
+	#{senderName, jdbcType=VARCHAR},
+	#{timestamp, jdbcType=BIGINT},
+	#{content, jdbcType=VARCHAR},
+	#{type, jdbcType=INTEGER},
+	#{conversationId, jdbcType=VARCHAR},
+	#{receiverId, jdbcType=BIGINT},
+	#{vip, jdbcType=INTEGER},
+	#{isAudio, jdbcType=INTEGER})
+    </insert>
+    
+    <insert id="insertBatch" parameterType="java.util.List" >
+	INSERT INTO privateChatRecord (senderId, senderName, timestamp, content, type, conversationId, receiverId, vip, isAudio)
+	VALUES
+	<foreach collection="list" item="item" index="index" separator=",">
+	    (#{item.senderId, jdbcType=BIGINT},
+	    #{item.senderName, jdbcType=VARCHAR},
+	    #{item.timestamp, jdbcType=BIGINT},
+	    #{item.content, jdbcType=VARCHAR},
+	    #{item.type, jdbcType=INTEGER},
+	    #{item.conversationId, jdbcType=VARCHAR},
+	    #{item.receiverId, jdbcType=BIGINT},
+	    #{item.vip, jdbcType=INTEGER},
+	    #{item.isAudio, jdbcType=INTEGER})
+	</foreach>
+    </insert>
+    
+    <insert id="insertAudit" parameterType="game.server.db.game.bean.PrivateChatRecordBean" >
+	INSERT INTO privateChatRecordAudit (senderId, senderName, timestamp, content, type, conversationId, receiverId, vip, isAudio)
+	VALUES (
+	#{senderId, jdbcType=BIGINT},
+	#{senderName, jdbcType=VARCHAR},
+	#{timestamp, jdbcType=BIGINT},
+	#{content, jdbcType=VARCHAR},
+	#{type, jdbcType=INTEGER},
+	#{conversationId, jdbcType=VARCHAR},
+	#{receiverId, jdbcType=BIGINT},
+	#{vip, jdbcType=INTEGER},
+	#{isAudio, jdbcType=INTEGER})
+    </insert>
+    
+    <insert id="insertAuditBatch" parameterType="java.util.List" >
+	INSERT INTO privateChatRecordAudit (senderId, senderName, timestamp, content, type, conversationId, receiverId, vip, isAudio)
+	VALUES
+	<foreach collection="list" item="item" index="index" separator=",">
+	    (#{item.senderId, jdbcType=BIGINT},
+	    #{item.senderName, jdbcType=VARCHAR},
+	    #{item.timestamp, jdbcType=BIGINT},
+	    #{item.content, jdbcType=VARCHAR},
+	    #{item.type, jdbcType=INTEGER},
+	    #{item.conversationId, jdbcType=VARCHAR},
+	    #{item.receiverId, jdbcType=BIGINT},
+	    #{item.vip, jdbcType=INTEGER},
+	    #{item.isAudio, jdbcType=INTEGER})
+	</foreach>
+    </insert>
+
+<!-- 带小于号要使用<![CDATA[     ]]>转义-->
+    <delete id="delete" parameterType="HashMap" >
+	delete from privateChatRecord
+	where
+	conversationId = #{conversationId, jdbcType=VARCHAR} 
+	AND
+	<![CDATA[ timestamp  <= #{timestamp, jdbcType=BIGINT} ]]>
+    </delete>
+
+    <delete id="deleteAll">
+	TRUNCATE TABLE privatechatrecord;
+	TRUNCATE TABLE privatechatrecordaudit;
+    </delete>
+    
+    <select id="selectAll" parameterType="HashMap" resultMap="PrivateChatRecordBean">
+	SELECT senderId, senderName, timestamp, content, type, conversationId, receiverId, vip, isAudio
+	FROM privateChatRecord
+	WHERE conversationId = #{conversationId, jdbcType=VARCHAR}
+	ORDER BY timestamp DESC
+    </select>
+    
+    <select id="selectOne" parameterType="HashMap" resultMap="PrivateChatRecordBean">
+	SELECT senderId, senderName, timestamp, content, type, conversationId, receiverId, vip, isAudio
+	FROM privateChatRecord
+	WHERE
+	conversationId = #{conversationId, jdbcType=VARCHAR} 
+	AND
+	timestamp = #{timestamp, jdbcType=BIGINT}
+    </select>
+
+</mapper>

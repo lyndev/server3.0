@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_skill_buff_level">
+    <resultMap id="bean" type="game.data.bean.q_skill_buff_levelBean" >
+            <result column="q_skill_level_id" property="q_skill_level_id" jdbcType="VARCHAR" />
+            <result column="q_comment" property="q_comment" jdbcType="VARCHAR" />
+            <result column="q_skill_probability" property="q_skill_probability" jdbcType="INTEGER" />
+            <result column="q_add_attribute_type_1" property="q_add_attribute_type_1" jdbcType="INTEGER" />
+            <result column="q_add_attribute_pct_1" property="q_add_attribute_pct_1" jdbcType="INTEGER" />
+            <result column="q_add_attribute_value_1" property="q_add_attribute_value_1" jdbcType="VARCHAR" />
+            <result column="q_add_attribute_type_2" property="q_add_attribute_type_2" jdbcType="INTEGER" />
+            <result column="q_add_attribute_pct_2" property="q_add_attribute_pct_2" jdbcType="INTEGER" />
+            <result column="q_add_attribute_value_2" property="q_add_attribute_value_2" jdbcType="INTEGER" />
+            <result column="q_add_attribute_type_3" property="q_add_attribute_type_3" jdbcType="INTEGER" />
+            <result column="q_add_attribute_pct_3" property="q_add_attribute_pct_3" jdbcType="INTEGER" />
+            <result column="q_add_attribute_value_3" property="q_add_attribute_value_3" jdbcType="VARCHAR" />
+            <result column="q_skill_consume_type" property="q_skill_consume_type" jdbcType="INTEGER" />
+            <result column="q_skill_consume_pct" property="q_skill_consume_pct" jdbcType="INTEGER" />
+            <result column="q_skill__addtionhurt_type" property="q_skill__addtionhurt_type" jdbcType="INTEGER" />
+            <result column="q_skill_addtionhurt_pct" property="q_skill_addtionhurt_pct" jdbcType="INTEGER" />
+            <result column="q_skill_addtionhurt_value" property="q_skill_addtionhurt_value" jdbcType="INTEGER" />
+            <result column="q_effect_duration" property="q_effect_duration" jdbcType="INTEGER" />
+            <result column="q_buff_probability" property="q_buff_probability" jdbcType="INTEGER" />
+            <result column="q_buff_steal_pct" property="q_buff_steal_pct" jdbcType="INTEGER" />
+            <result column="q_buff_steal_value" property="q_buff_steal_value" jdbcType="INTEGER" />
+            <result column="q_buff_frequency_pct" property="q_buff_frequency_pct" jdbcType="INTEGER" />
+            <result column="q_buff_frequency_value" property="q_buff_frequency_value" jdbcType="INTEGER" />
+            <result column="q_buff_absorb_value" property="q_buff_absorb_value" jdbcType="INTEGER" />
+            <result column="q_buff_rebound_pct" property="q_buff_rebound_pct" jdbcType="INTEGER" />
+            <result column="q_buff_easyhurt_pct" property="q_buff_easyhurt_pct" jdbcType="INTEGER" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_skill_buff_level
+    </select>
+</mapper>

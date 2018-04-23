@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://v3.bootcss.com/examples/dashboard/ -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="images/icon.ico">
+
+<title>生成激活码</title>
+
+<!-- Bootstrap core CSS -->
+<link href="../../css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="../../css/dashboard.css" rel="stylesheet">
+
+<!-- ============Bootstrap core JavaScript========= -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../../js/jquery.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
+<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<!-- <script src="./Dashboard Template for Bootstrap_files/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<script type="text/javascript">
+	$(function() {
+		$("#changeGmLevel").click(function() {
+			var userName = $("#userName").val();
+			if (userName == '') {
+				alert("玩家名称未填写");
+				return;
+			}
+
+			var server = $('input[name="serverRadio"]:checked');
+			if (!server.length) {
+				alert("还未选择指定的服务器");
+				return;
+			}
+			server = server.val();
+			if (!confirm("确认要修改服务器:【"+server+"】, 玩家:【"+userName+"】的GM等级.....")) {
+				return false;
+			}
+			var level =  $("#level").val();
+			var sendData = {
+				"server":server,
+				"userName":userName,
+				"level":level,
+			};
+ 			$.post('../../gmlevel',sendData,function(data){
+					alert(data);
+				}
+			,'text'); 
+		});
+
+		var bRequestServer = false;
+		$("#getServerList").click(
+			function() {
+				if (bRequestServer) {
+					return;
+				}
+				$.post('../../serverList','',function(data) {
+					if (data == "error") {
+						alert('获取服务器列表错误');
+					} else {
+						var list = eval("(" + data+ ")");
+						var serverHtml = "";
+						for (var i = 0; i < list.length; i++) {
+							var serverInfo = list[i];
+							if (serverInfo.name == 'agent') {
+								continue;
+							}
+							var serverId = "<td>"+ serverInfo.serverId+ "</td>";
+							var serverName = "<td>"+ serverInfo.name+ "</td>";
+							var statusArr = new Array()
+							statusArr['open'] = "开启";
+							statusArr['close'] = "关闭";
+							statusArr['debug'] = "维护";
+							statusArr['hide'] = "隐藏";
+							var status = "<td>"+ statusArr[serverInfo.status]+ "</td>";
+							var handler = "<td><input type='radio' name='serverRadio' name='serverRadio' value='"+serverInfo.serverId+"'>";
+							serverHtml = serverHtml+ "<tr>"+ serverId + serverName + status + handler + "</tr>";
+						}
+						$("#serverList").html(serverHtml)
+					}
+					bRequestServer = true;
+				}, 'text');
+		});
+	});
+</script>
+</head>
+
+<body>
+	<div class="row">
+		<div class="col-md-12 main">
+			<h1 class="page-header">修改GM等级</h1>
+			<div class="row">
+				<form class="form-horizontal" role="form">
+					<div class="form-group">
+						<label for="inputPassword3" class="col-xs-2 control-label">玩家名称</label>
+						<div class="col-xs-5">
+							<input type="text" class="form-control" id="userName">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-xs-2 control-label">操作类型</label>
+						<div class="col-xs-5">
+							<select id="level" class="selectpicker form-control"
+								data-style="btn-default">
+								<option value="0">关闭GM</option>
+								<option value="1">开启GM</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="toOther" class="col-xs-2 control-label">服务器选择</label>
+						<div class="col-xs-5">
+							<button type="button" class="btn btn-info btn-sm btn-block" id="getServerList">获取服务器列表</button>
+								<br />
+								<table class="table table-bordered table-hover">
+								<thead>
+									<tr>
+										<th>服务器ID</th>
+										<th>服务器名称</th>
+										<th>服务器状态</th>
+										<th>选择</th>
+									</tr>
+								</thead>
+								<tbody id="serverList">
+									<!-- 服务器列表  -->
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputEmail3" class="col-xs-2 control-label"></label>
+						<div class="col-xs-1"></div>
+						<div class="col-xs-3">
+							<button type="button" class="btn btn-success btn-block"
+								id="changeGmLevel">修改</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+/*
+ Tomcat Post请求大小设置
+ 根据官方文档http://tomcat.apache.org/tomcat-6.0-doc/config/http.html，我们可以看出，tomcat6在默认状态下最大的post请求是2M
+ 
+ maxPostSize
+ The maximum size in bytes of the POST which will be handled by the container FORM URL parameter parsing. The limit can be disabled by setting this attribute to a value less than or equal to 0. If not specified, this attribute is set to 2097152 (2 megabytes).
+ 
+ 如果需要修改的，就需要找到server.xml文件
+ <Connector port="8080" protocol="HTTP/1.1"
+ connectionTimeout="20000"
+ redirectPort="8443"  maxPostSize="0" />
+ maxPostSize： 0 表示不限制
+ 其中单位为：byte
+ 自己看着算。
+ */

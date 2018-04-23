@@ -1,0 +1,44 @@
+[2018-04-20 16:37:11 ERROR](ServerConfig.java:137)unknow node [game-server-types]
+[2018-04-20 16:42:22 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 16:47:22 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 16:51:10 ERROR](LoginService.java:707)userName = d9c3b884-2850-4a5c-b4b1-e2a0385fa20c 已经创建过角色
+[2018-04-20 16:51:11 ERROR](LoginService.java:707)userName = ecca9daa-33e7-41ff-b684-028f9e215b0d 已经创建过角色
+[2018-04-20 16:51:34 ERROR](ZJHRoom.java:985)client add score fail, < this.m_lCellScore
+[2018-04-20 16:51:36 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 16:51:44 ERROR](ZJHRoom.java:985)client add score fail, < this.m_lCellScore
+[2018-04-20 16:52:04 ERROR](ZJHRoom.java:985)client add score fail, < this.m_lCellScore
+[2018-04-20 16:52:11 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 16:52:12 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 16:52:14 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 16:52:17 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 16:52:17 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 16:52:17 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 16:52:17 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 16:52:22 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 16:56:32 ERROR](SessionUtils.java:47)cannot find attribute key: [FGI]
+[2018-04-20 16:56:32 ERROR](SessionUtils.java:47)cannot find attribute key: [CLIENT]
+[2018-04-20 16:56:32 ERROR](SessionUtils.java:47)cannot find attribute key: [DEVICE]
+[2018-04-20 16:56:32 ERROR](SessionUtils.java:47)cannot find attribute key: [PLATFORM_UID]
+[2018-04-20 16:56:37 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 16:56:37 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 16:56:37 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 16:56:37 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 16:57:22 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 16:57:42 ERROR](LoginService.java:707)userName = aff235b1-7aa5-4034-bb76-8dbab34f8e3f 已经创建过角色
+[2018-04-20 16:57:44 ERROR](LoginService.java:707)userName = 6faac9c3-4608-403c-b116-4526facbad5c 已经创建过角色
+[2018-04-20 16:58:23 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 16:58:30 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 16:58:35 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 16:58:35 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 16:58:35 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 16:58:35 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 16:58:35 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 16:58:35 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 16:58:35 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 16:58:35 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 17:02:22 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 17:07:22 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 17:12:22 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 17:17:22 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 17:22:22 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境
+[2018-04-20 17:27:22 ERROR](LogServiceImpl.java:1007)这里在写入MongoDB日志，由于MongoDB 环境没有配置，写入失败，请配置MongoDB环境

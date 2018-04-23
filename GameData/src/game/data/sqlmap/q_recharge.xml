@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_recharge">
+    <resultMap id="bean" type="game.data.bean.q_rechargeBean" >
+            <result column="q_id" property="q_id" jdbcType="INTEGER" />
+            <result column="q_name" property="q_name" jdbcType="VARCHAR" />
+            <result column="q_type" property="q_type" jdbcType="INTEGER" />
+            <result column="q_cost" property="q_cost" jdbcType="INTEGER" />
+            <result column="q_give" property="q_give" jdbcType="INTEGER" />
+            <result column="q_first_give" property="q_first_give" jdbcType="INTEGER" />
+            <result column="q_normal_give" property="q_normal_give" jdbcType="INTEGER" />
+            <result column="q_month_give" property="q_month_give" jdbcType="INTEGER" />
+            <result column="q_vip_exp" property="q_vip_exp" jdbcType="INTEGER" />
+            <result column="q_icon" property="q_icon" jdbcType="VARCHAR" />
+            <result column="q_desc" property="q_desc" jdbcType="VARCHAR" />
+            <result column="q_lable" property="q_lable" jdbcType="INTEGER" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_recharge
+    </select>
+</mapper>

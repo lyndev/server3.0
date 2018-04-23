@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_level_package">
+    <resultMap id="bean" type="game.data.bean.q_level_packageBean" >
+            <result column="q_packageId" property="q_packageId" jdbcType="INTEGER" />
+            <result column="q_items" property="q_items" jdbcType="LONGVARCHAR" />
+            <result column="q_accu_items" property="q_accu_items" jdbcType="LONGVARCHAR" />
+            <result column="q_annotation" property="q_annotation" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_level_package
+    </select>
+</mapper>

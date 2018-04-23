@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_skill">
+    <resultMap id="bean" type="game.data.bean.q_skillBean" >
+            <result column="q_skill_id" property="q_skill_id" jdbcType="INTEGER" />
+            <result column="q_skill_name" property="q_skill_name" jdbcType="VARCHAR" />
+            <result column="q_skill_desc1" property="q_skill_desc1" jdbcType="VARCHAR" />
+            <result column="q_skill_desc2" property="q_skill_desc2" jdbcType="VARCHAR" />
+            <result column="q_have_buff_id" property="q_have_buff_id" jdbcType="VARCHAR" />
+            <result column="q_skill_buff_desc1" property="q_skill_buff_desc1" jdbcType="VARCHAR" />
+            <result column="q_skill_buff_desc2" property="q_skill_buff_desc2" jdbcType="VARCHAR" />
+            <result column="q_icon" property="q_icon" jdbcType="VARCHAR" />
+            <result column="q_level_factor" property="q_level_factor" jdbcType="INTEGER" />
+            <result column="q_get_energy" property="q_get_energy" jdbcType="INTEGER" />
+            <result column="q_hurt_type" property="q_hurt_type" jdbcType="INTEGER" />
+            <result column="q_skill_type" property="q_skill_type" jdbcType="INTEGER" />
+            <result column="q_level_source" property="q_level_source" jdbcType="INTEGER" />
+            <result column="q_use_state" property="q_use_state" jdbcType="INTEGER" />
+            <result column="q_group_type" property="q_group_type" jdbcType="INTEGER" />
+            <result column="q_end_type" property="q_end_type" jdbcType="INTEGER" />
+            <result column="q_break_type" property="q_break_type" jdbcType="INTEGER" />
+            <result column="q_use_type" property="q_use_type" jdbcType="INTEGER" />
+            <result column="q_action_id" property="q_action_id" jdbcType="VARCHAR" />
+            <result column="q_attack_distance" property="q_attack_distance" jdbcType="INTEGER" />
+            <result column="q_use_priority" property="q_use_priority" jdbcType="INTEGER" />
+            <result column="q_select_ref" property="q_select_ref" jdbcType="VARCHAR" />
+            <result column="q_trigger" property="q_trigger" jdbcType="VARCHAR" />
+            <result column="q_cd" property="q_cd" jdbcType="INTEGER" />
+            <result column="q_delay" property="q_delay" jdbcType="VARCHAR" />
+            <result column="q_cast_effect" property="q_cast_effect" jdbcType="VARCHAR" />
+            <result column="q_cast_voice" property="q_cast_voice" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_skill
+    </select>
+</mapper>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_robot_config">
+    <resultMap id="bean" type="game.data.bean.q_robot_configBean" >
+            <result column="q_initial_ranking" property="q_initial_ranking" jdbcType="INTEGER" />
+            <result column="q_act_level" property="q_act_level" jdbcType="INTEGER" />
+            <result column="q_power" property="q_power" jdbcType="INTEGER" />
+            <result column="q_leader_id" property="q_leader_id" jdbcType="VARCHAR" />
+            <result column="q_leader_demon" property="q_leader_demon" jdbcType="VARCHAR" />
+            <result column="q_leader_quality" property="q_leader_quality" jdbcType="VARCHAR" />
+            <result column="q_leader_star" property="q_leader_star" jdbcType="VARCHAR" />
+            <result column="q_leader_correction" property="q_leader_correction" jdbcType="VARCHAR" />
+            <result column="q_card_id_2" property="q_card_id_2" jdbcType="VARCHAR" />
+            <result column="q_card_quality_2" property="q_card_quality_2" jdbcType="VARCHAR" />
+            <result column="q_card_star_2" property="q_card_star_2" jdbcType="VARCHAR" />
+            <result column="q_card_correction_2" property="q_card_correction_2" jdbcType="VARCHAR" />
+            <result column="q_card_id_3" property="q_card_id_3" jdbcType="VARCHAR" />
+            <result column="q_card_quality_3" property="q_card_quality_3" jdbcType="VARCHAR" />
+            <result column="q_card_star_3" property="q_card_star_3" jdbcType="VARCHAR" />
+            <result column="q_card_correction_3" property="q_card_correction_3" jdbcType="VARCHAR" />
+            <result column="q_card_id_4" property="q_card_id_4" jdbcType="VARCHAR" />
+            <result column="q_card_quality_4" property="q_card_quality_4" jdbcType="VARCHAR" />
+            <result column="q_card_star_4" property="q_card_star_4" jdbcType="VARCHAR" />
+            <result column="q_card_correction_4" property="q_card_correction_4" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_robot_config
+    </select>
+</mapper>

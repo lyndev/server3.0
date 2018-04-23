@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="global">
+	<resultMap id="globalBean" type="com.web.db.bean.GlobalBean">
+		<result column="id" property="id" jdbcType="INTEGER" />
+		<result column="value" property="value" jdbcType="LONGVARCHAR" />
+	</resultMap>
+
+	<insert id="insert" parameterType="com.web.db.bean.GlobalBean">
+		INSERT INTO global (id, value) VALUES
+		(
+		#{id, jdbcType=INTEGER},
+		#{value, jdbcType=LONGVARCHAR}
+		)
+	</insert>
+
+	<update id="update" parameterType="com.web.db.bean.GlobalBean">
+		UPDATE global SET value = #{value, jdbcType=LONGVARCHAR} where id = #{id,
+		jdbcType=INTEGER}
+	</update>
+
+	<select id="selectOne" parameterType="int" resultMap="globalBean">
+		SELECT
+		id, value FROM global WHERE id = #{id, jdbcType=INTEGER}
+	</select>
+</mapper>

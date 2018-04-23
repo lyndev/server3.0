@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="rank">
+    <resultMap id="bean" type="game.server.db.game.bean.RankBean">
+	<result column="userId" property="userId" jdbcType="VARCHAR" />
+	<result column="roleId" property="roleId" jdbcType="VARCHAR" />
+	<result column="roleName" property="roleName" jdbcType="VARCHAR" />
+	<result column="roleHead" property="roleHead" jdbcType="INTEGER" />
+	<result column="roleLevel" property="roleLevel" jdbcType="INTEGER" />
+	<result column="achievementPoint" property="achievementPoint" jdbcType="INTEGER" />
+	<result column="achievementLastModify" property="achievementLastModify" jdbcType="TIMESTAMP" />
+	<result column="achievementRank" property="achievementRank" jdbcType="INTEGER" />
+	<result column="funMission1Score" property="funMission1Score" jdbcType="INTEGER" />
+	<result column="funMission1LastModify" property="funMission1LastModify" jdbcType="TIMESTAMP" />
+	<result column="funMission1Rank" property="funMission1Rank" jdbcType="INTEGER" />
+	<result column="funMission2Score" property="funMission2Score" jdbcType="INTEGER" />
+	<result column="funMission2LastModify" property="funMission2LastModify" jdbcType="TIMESTAMP" />
+	<result column="funMission2Rank" property="funMission2Rank" jdbcType="INTEGER" />
+    </resultMap>
+
+    <insert id="insert" parameterType="game.server.db.game.bean.RankBean" >
+	INSERT INTO rank (userId, roleId, roleName, roleHead, roleLevel, achievementPoint, achievementLastModify, achievementRank, funMission1Score, funMission1LastModify, funMission1Rank, funMission2Score, funMission2LastModify, funMission2Rank)
+	VALUES (
+	#{userId, jdbcType=VARCHAR},
+	#{roleId, jdbcType=VARCHAR},
+	#{roleName, jdbcType=VARCHAR},
+	#{roleHead, jdbcType=INTEGER},
+	#{roleLevel, jdbcType=INTEGER},
+	#{achievementPoint, jdbcType=INTEGER},
+	#{achievementLastModify, jdbcType=TIMESTAMP},
+	#{achievementRank, jdbcType=INTEGER},
+	#{funMission1Score, jdbcType=INTEGER},
+	#{funMission1LastModify, jdbcType=TIMESTAMP},
+	#{funMission1Rank, jdbcType=INTEGER},
+	#{funMission2Score, jdbcType=INTEGER},
+	#{funMission2LastModify, jdbcType=TIMESTAMP},
+	#{funMission2Rank, jdbcType=INTEGER})
+    </insert>
+
+    <update id="update" parameterType="game.server.db.game.bean.RankBean" >
+	UPDATE rank SET
+	roleId = #{roleId, jdbcType=VARCHAR},
+	roleName = #{roleName, jdbcType=VARCHAR},
+	roleHead = #{roleHead, jdbcType=INTEGER},
+	roleLevel = #{roleLevel, jdbcType=INTEGER},
+	achievementPoint = #{achievementPoint, jdbcType=INTEGER},
+	achievementLastModify = #{achievementLastModify, jdbcType=TIMESTAMP},
+	funMission1Score = #{funMission1Score, jdbcType=INTEGER},
+	funMission1LastModify = #{funMission1LastModify, jdbcType=TIMESTAMP},
+<!--这三个域不更新, 只在updateFunMission1Rank, updateFunMission2Rank和updateAchievementRank中更新-->
+<!--	funMission1Rank = #{funMission1Rank, jdbcType=INTEGER},-->
+<!--	funMission2Rank = #{funMission2Rank, jdbcType=INTEGER},-->
+<!--	achievementRank = #{achievementRank, jdbcType=INTEGER},-->
+	funMission2Score = #{funMission2Score, jdbcType=INTEGER},
+	funMission2LastModify = #{funMission2LastModify, jdbcType=TIMESTAMP}
+	where userId = #{userId, jdbcType=VARCHAR}
+    </update>
+    
+    <update id="updateAchievementRank" parameterType="game.server.db.game.bean.RankBean" >
+	UPDATE rank SET
+	achievementRank = #{achievementRank, jdbcType=INTEGER}
+	where userId = #{userId, jdbcType=VARCHAR}
+    </update>
+    
+    <update id="updateFunMission1Rank" parameterType="game.server.db.game.bean.RankBean" >
+	UPDATE rank SET
+	funMission1Rank = #{funMission1Rank, jdbcType=INTEGER}
+	where userId = #{userId, jdbcType=VARCHAR}
+    </update>
+    
+    <update id="updateFunMission2Rank" parameterType="game.server.db.game.bean.RankBean" >
+	UPDATE rank SET
+	funMission2Rank = #{funMission2Rank, jdbcType=INTEGER}
+	where userId = #{userId, jdbcType=VARCHAR}
+    </update>
+
+
+    <select id="selectAchievementRank" resultType="game.server.db.game.bean.RankBean">
+	SELECT *
+	FROM rank
+	ORDER BY achievementPoint DESC, achievementLastModify ASC LIMIT 50
+    </select>
+    
+    <select id="initAchievementRank" resultType="game.server.db.game.bean.RankBean">
+	SELECT *
+	FROM rank WHERE achievementRank > 0
+	ORDER BY achievementRank ASC, achievementLastModify ASC LIMIT 50
+    </select>
+    
+    <select id="selectFunMission1Rank" resultType="game.server.db.game.bean.RankBean">
+	SELECT *
+	FROM rank
+	ORDER BY funMission1Score DESC, funMission1LastModify ASC
+    </select>
+    
+    <select id="initFunMission1Rank" resultType="game.server.db.game.bean.RankBean">
+	SELECT *
+	FROM rank WHERE funMission1Rank > 0
+	ORDER BY funMission1Rank ASC, funMission2LastModify ASC
+    </select>
+    
+    <select id="selectFunMission2Rank" resultType="game.server.db.game.bean.RankBean">
+	SELECT *
+	FROM rank
+	ORDER BY funMission2Score DESC, funMission2LastModify ASC
+    </select>
+    
+    <select id="initFunMission2Rank" resultType="game.server.db.game.bean.RankBean">
+	SELECT *
+	FROM rank WHERE funMission2Rank > 0
+	ORDER BY funMission2Rank ASC, funMission2LastModify ASC
+    </select>
+</mapper>

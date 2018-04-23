@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_item">
+    <resultMap id="bean" type="game.data.bean.q_itemBean" >
+            <result column="q_id" property="q_id" jdbcType="INTEGER" />
+            <result column="q_name" property="q_name" jdbcType="INTEGER" />
+            <result column="q_name_plan" property="q_name_plan" jdbcType="VARCHAR" />
+            <result column="q_tiny_icon" property="q_tiny_icon" jdbcType="INTEGER" />
+            <result column="q_tiny_effect" property="q_tiny_effect" jdbcType="VARCHAR" />
+            <result column="q_type" property="q_type" jdbcType="INTEGER" />
+            <result column="q_goods_star" property="q_goods_star" jdbcType="INTEGER" />
+            <result column="q_default" property="q_default" jdbcType="INTEGER" />
+            <result column="q_level" property="q_level" jdbcType="INTEGER" />
+            <result column="q_cardlevel" property="q_cardlevel" jdbcType="INTEGER" />
+            <result column="q_goods" property="q_goods" jdbcType="VARCHAR" />
+            <result column="q_can_synthetic" property="q_can_synthetic" jdbcType="INTEGER" />
+            <result column="q_can_use" property="q_can_use" jdbcType="INTEGER" />
+            <result column="q_role_object" property="q_role_object" jdbcType="INTEGER" />
+            <result column="q_add_resources" property="q_add_resources" jdbcType="VARCHAR" />
+            <result column="q_add_items" property="q_add_items" jdbcType="LONGVARCHAR" />
+            <result column="q_ui" property="q_ui" jdbcType="INTEGER" />
+            <result column="q_max" property="q_max" jdbcType="INTEGER" />
+            <result column="q_add_exp" property="q_add_exp" jdbcType="INTEGER" />
+            <result column="q_sell_price" property="q_sell_price" jdbcType="INTEGER" />
+            <result column="q_sell_confirm" property="q_sell_confirm" jdbcType="INTEGER" />
+            <result column="q_get_path" property="q_get_path" jdbcType="VARCHAR" />
+            <result column="q_compound_list" property="q_compound_list" jdbcType="VARCHAR" />
+            <result column="q_consumeGold" property="q_consumeGold" jdbcType="INTEGER" />
+            <result column="q_describe" property="q_describe" jdbcType="INTEGER" />
+            <result column="q_script" property="q_script" jdbcType="INTEGER" />
+            <result column="q_daily_num" property="q_daily_num" jdbcType="INTEGER" />
+            <result column="q_usetime_limit" property="q_usetime_limit" jdbcType="VARCHAR" />
+            <result column="q_log" property="q_log" jdbcType="INTEGER" />
+            <result column="q_equipment_position" property="q_equipment_position" jdbcType="INTEGER" />
+            <result column="q_show" property="q_show" jdbcType="INTEGER" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_item
+    </select>
+</mapper>

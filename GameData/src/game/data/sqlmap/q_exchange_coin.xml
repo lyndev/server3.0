@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_exchange_coin">
+    <resultMap id="bean" type="game.data.bean.q_exchange_coinBean" >
+            <result column="q_times" property="q_times" jdbcType="INTEGER" />
+            <result column="q_gem_need" property="q_gem_need" jdbcType="INTEGER" />
+            <result column="q_coin_value" property="q_coin_value" jdbcType="INTEGER" />
+            <result column="q_crit" property="q_crit" jdbcType="VARCHAR" />
+            <result column="q_crit_power" property="q_crit_power" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_exchange_coin
+    </select>
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project game-logger">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="${basedir}/dist/game_log_sdk.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="com.haowan.logger.dao.MongoDBHelper"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="${basedir}/build/classes"/>
+            <zipfileset excludes="META-INF/*.SF" src="${basedir}/libs/commons-logging-1.1.1.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${basedir}//libs/httpclient-4.2.2.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${basedir}/libs/httpclient-cache-4.2.2.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${basedir}/libs/httpcore-4.2.2.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${basedir}/libs/json.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${basedir}/libs/log4j-1.2.15.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${basedir}/libs/mongo-java-driver-2.11.4.jar"/>
+        </jar>
+    </target>
+</project>

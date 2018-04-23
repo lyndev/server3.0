@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_aiConfig">
+    <resultMap id="bean" type="game.data.bean.q_aiConfigBean" >
+            <result column="q_aiID" property="q_aiID" jdbcType="INTEGER" />
+            <result column="q_aiName" property="q_aiName" jdbcType="VARCHAR" />
+            <result column="q_targetDead" property="q_targetDead" jdbcType="VARCHAR" />
+            <result column="q_notMove" property="q_notMove" jdbcType="VARCHAR" />
+            <result column="q_default" property="q_default" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_aiConfig
+    </select>
+</mapper>

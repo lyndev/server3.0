@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="user">
+    <resultMap id="userBean" type="game.server.db.game.bean.UserBean">
+	<result column="userId" property="userId" jdbcType="VARCHAR" />
+	<result column="userName" property="userName" jdbcType="VARCHAR" />
+    </resultMap>
+    
+    <resultMap id="UserRoleBean" type="game.server.db.game.bean.UserRoleBean">
+	<result column="userId" property="userId" jdbcType="VARCHAR" />
+	<result column="userName" property="userName" jdbcType="VARCHAR" />
+	<result column="roleId" property="roleId" jdbcType="VARCHAR" />
+	<result column="roleName" property="roleName" jdbcType="VARCHAR" />
+	<result column="roleLevel" property="roleLevel" jdbcType="INTEGER" />
+	<result column="roleHead" property="roleHead" jdbcType="INTEGER" />
+	<result column="vipLevel" property="vipLevel" jdbcType="INTEGER" />
+	<result column="isRobot" property="isRobot" jdbcType="INTEGER" />
+	<result column="fgi" property="fgi" jdbcType="VARCHAR" />
+	<result column="fedId" property="fedId" jdbcType="VARCHAR" />
+	<result column="platformId" property="platformId" jdbcType="INTEGER" />
+	<result column="serverId" property="serverId" jdbcType="INTEGER" />
+	<result column="miscData" property="miscData" jdbcType="LONGVARCHAR" />
+    </resultMap>
+    
+    <resultMap id="RoleView" type="game.server.logic.support.RoleView">
+	<result column="userId" property="userId" jdbcType="VARCHAR" />
+	<result column="userName" property="userName" jdbcType="VARCHAR" />
+	<result column="roleId" property="roleId" jdbcType="VARCHAR" />
+	<result column="roleName" property="roleName" jdbcType="VARCHAR" />
+	<result column="roleLevel" property="roleLevel" jdbcType="INTEGER" />
+	<result column="vipLevel" property="vipLevel" jdbcType="INTEGER" />
+	<result column="serverId" property="serverId" jdbcType="INTEGER" />
+	<result column="platformId" property="platformId" jdbcType="INTEGER" />
+	<result column="isRobot" property="isRobot" jdbcType="INTEGER" />
+    </resultMap>
+	
+    <insert id="insert" parameterType="game.server.db.game.bean.UserBean" >
+	INSERT INTO user(userName, userId)
+	VALUES(
+	#{userName, jdbcType=VARCHAR},
+	#{userId, jdbcType=VARCHAR}
+	)
+    </insert>
+    
+    <select id="selectById" parameterType="HashMap" resultMap="userBean">
+	select userName, userId from user where userId = #{userId, jdbcType=VARCHAR}
+    </select>
+    
+    <select id="selectByName" parameterType="HashMap" resultMap="userBean">
+	select userName, userId from user where userName = #{userName, jdbcType=VARCHAR}
+    </select>
+
+    <select id="selecJoinAll" resultMap="UserRoleBean">
+	SELECT u.userId, u.userName, r.fgi, r.fedId, r.platformId, r.serverId, r.roleId, r.roleName, r.roleLevel, r.vipLevel, r.roleHead, r.isRobot, r.miscData
+	FROM role r inner join user u on u.userId = r.userId  
+    </select>
+    
+    <select id="selecJoinAllRobots" resultMap="UserRoleBean">
+	SELECT u.userId, u.userName, r.platformId, r.serverId, r.roleId, r.roleName, r.roleLevel, r.vipLevel, r.roleHead, r.isRobot, r.miscData
+	FROM role r inner join user u on u.userId = r.userId  where r.isRobot = 1
+    </select>
+    
+    <select id="selectJoinByUserId" parameterType="string" resultMap="UserRoleBean">
+	SELECT u.userId, u.userName, r.fgi, r.fedId, r.platformId, r.serverId, r.roleId, r.roleName, r.roleLevel, r.vipLevel, r.roleHead, r.isRobot, r.miscData
+	FROM role r inner join user u on u.userId = r.userId where r.userId = #{userId, jdbcType=VARCHAR}
+    </select>
+    
+    <select id="selectJoinByName" parameterType="HashMap" resultMap="UserRoleBean">
+	SELECT
+	user.userName, user.userId as userId, 
+	role.roleId, role.roleName, role.roleLevel, role.roleHead, role.vipLevel, role.isRobot, role.fgi, role.fedId, role.platformId, role.serverId, role.isRobot, role.miscData
+	FROM user, role
+	WHERE user.userId = role.userId AND user.userName = #{userName, jdbcType=VARCHAR}
+    </select>
+    
+    <select id="selectAllJoinRole" parameterType="HashMap" resultMap="RoleView">
+	SELECT
+	user.userId as userId,
+	user.userName as userName,
+	role.roleId as roleId,
+	role.roleName as roleName,
+	role.roleLevel as roleLevel,
+	role.vipLevel as vipLevel,
+	role.serverId as serverId,
+	role.platformId as platformId,
+	role.isRobot as isRobot
+	FROM user, role
+	WHERE user.userId = role.userId
+    </select>
+    
+    <select id="selectAll" resultType="game.server.db.game.bean.UserBean">
+	select userName, userId from user
+    </select>
+    
+    <delete id="deleteAllRobot">
+	delete from user where userId in (select userId from role where isRobot = 1)
+    </delete>
+
+</mapper>

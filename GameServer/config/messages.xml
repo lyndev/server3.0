@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 每条客户端消息及其对应的服务端处理器配置文件 -->
+
+<messages>
+    <!-- 登录 -->
+    <msg message="game.message.LoginMessage$ReqLogin" handler="game.server.logic.login.handler.ReqLoginHandler" />
+    <msg message="game.message.LoginMessage$ReqCreateRole" handler="game.server.logic.login.handler.ReqCreateRoleHandler" />
+    <msg message="game.message.LoginMessage$ReqReconnect" handler="game.server.logic.login.handler.ReqReconnectHandler" />
+    <msg message="game.message.LoginMessage$ResPingPong" handler="game.server.logic.player.handler.PingPongHandler" />
+    <!--房间 -->
+    <msg message="game.message.RoomMessage$ReqCreateRoom" handler="game.server.world.room.handler.ReqCreateRoomHandler" />
+    <msg message="game.message.RoomMessage$ReqEnterRoom" handler="game.server.world.room.handler.ReqEnterRoomHandler" />
+    <msg message="game.message.RoomMessage$ReqLeaveRoom" handler="game.server.world.room.handler.ReqLeaveRoomHandler" />
+    <msg message="game.message.RoomMessage$ReqAction" handler="game.server.world.room.handler.ReqActionHandler" />
+    <msg message="game.message.RoomMessage$ReqUDPEnterRoom" handler="game.server.world.room.handler.ReqUDPEnterRoomHandler" />
+    <msg message="game.message.RoomMessage$ReqMoveKeyData" handler="game.server.world.room.handler.ReqMoveKeyDataHandler" />
+    <!-- 玩家 -->
+    <msg message="game.message.PlayerMessage$ReqGMCommand" handler="game.server.logic.player.handler.ReqGmCommandHandler" />
+    <msg message="game.message.PlayerMessage$ReqTimestamp" handler="game.server.logic.player.handler.ReqTimestampHandler" />
+
+    <!-- 背包 -->
+    <msg message="game.message.BackpackMessage$ReqBackpackList" handler="game.server.logic.backpack.handler.ReqBackpackListHandler" />
+    <msg message="game.message.BackpackMessage$ReqItemCell" handler="game.server.logic.backpack.handler.ReqItemCellHandler" />
+    <msg message="game.message.BackpackMessage$ReqItemCombine" handler="game.server.logic.backpack.handler.ReqItemCombineHandler" />
+    <msg message="game.message.BackpackMessage$ReqItemSell" handler="game.server.logic.backpack.handler.ReqItemSellHandler" />
+    <msg message="game.message.BackpackMessage$ReqItemUse" handler="game.server.logic.backpack.handler.ReqItemUseHandler" />
+    <msg message="game.message.BackpackMessage$ReqExpPropUse" handler="game.server.logic.backpack.handler.ReqExpPropUseHandler" />
+    <msg message="game.message.BackpackMessage$ReqDebrisCombine" handler="game.server.logic.backpack.handler.ReqDebrisCombineHandler" />
+    <msg message="game.message.BackpackMessage$ReqTestAddAllItem" handler="game.server.logic.backpack.handler.ReqTestAddAllItem" />
+    
+    <!-- 任务 -->
+    <msg message="game.message.TaskMessage$ReqGetOneDailyTaskAward" handler="game.server.logic.task.daily.handler.ReqGetOneDailyTaskAwardHandler" />
+
+    <!-- 邮件系统 -->
+
+
+    <!-- 签到系统 -->
+
+
+    <!-- 新手引导 -->
+
+
+    <!-- 充值相关 -->
+
+    
+    <!-- VIP相关 -->
+
+
+    <!-- 返利 -->
+
+    
+    <!-- 好友系统 -->
+
+    
+    <!-- 聊天系统 -->
+    <msg message="game.message.ChatMessage$ReqFetchAudioMessage" handler="game.server.world.chat.handler.ReqFetchAudioMessageHandler" />
+    <msg message="game.message.ChatMessage$ReqSendAudioMessage" handler="game.server.world.chat.handler.ReqSendAudioMessageHandler" />
+    <msg message="game.message.ChatMessage$ReqSendTextMessage" handler="game.server.world.chat.handler.ReqSendTextMessageHandler" />    
+    
+    <!-- 激活码/兑换码 -->
+    
+</messages>

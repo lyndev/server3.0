@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="keyAttr">
+	<resultMap id="keyAttrBean" type="com.web.db.bean.KeyAttrBean">
+		<id column="batch" property="batch" jdbcType="SMALLINT" />
+		<result column="keyType" property="keyType" jdbcType="INTEGER" />
+		<result column="reward" property="reward" jdbcType="VARCHAR" />
+		<result column="useServer" property="useServer" jdbcType="INTEGER" />
+		<result column="fgi" property="fgi" jdbcType="SMALLINT" />
+		<result column="platform" property="platform" jdbcType="VARCHAR" />
+		<result column="generateNum" property="generateNum" jdbcType="SMALLINT" />
+		<result column="deadTime" property="deadTime" jdbcType="BIGINT" />
+		<result column="generateTime" property="generateTime" jdbcType="BIGINT" />
+		<result column="operator" property="operator" jdbcType="VARCHAR" />
+		<result column="descStr" property="descStr" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<insert id="insert" parameterType="com.web.db.bean.KeyAttrBean">
+		INSERT INTO key_attribute(batch,keyType,
+		reward,useServer,fgi,platform,generateNum,deadTime,
+		generateTime,operator,descStr)
+		VALUES(
+		#{batch,jdbcType=INTEGER},
+		#{keyType,jdbcType=INTEGER},
+		#{reward,jdbcType=VARCHAR},
+		#{useServer,jdbcType=INTEGER},
+		#{fgi,jdbcType=SMALLINT},
+		#{platform,jdbcType=VARCHAR},
+		#{generateNum,jdbcType=SMALLINT},
+		#{deadTime,jdbcType=BIGINT},
+		#{generateTime,jdbcType=BIGINT},
+		#{operator,jdbcType=VARCHAR},
+		#{descStr,jdbcType=VARCHAR}
+		)
+	</insert>
+
+	<select id="selectById" parameterType="java.lang.Short"
+		resultMap="keyAttrBean">
+		select * from key_attribute where batch = #{batch}
+	</select>	
+	
+	<select id="selectAll" resultType="com.web.db.bean.KeyAttrBean">
+		SELECT * FROM key_attribute
+	</select>
+</mapper>

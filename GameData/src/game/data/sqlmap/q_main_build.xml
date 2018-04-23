@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="q_main_build">
+    <resultMap id="bean" type="game.data.bean.q_main_buildBean" >
+            <result column="q_idx" property="q_idx" jdbcType="INTEGER" />
+            <result column="q_form_function" property="q_form_function" jdbcType="VARCHAR" />
+            <result column="q_show_name_idx" property="q_show_name_idx" jdbcType="INTEGER" />
+            <result column="q_show_name_offset" property="q_show_name_offset" jdbcType="VARCHAR" />
+            <result column="q_form_name" property="q_form_name" jdbcType="VARCHAR" />
+            <result column="q_spine_path" property="q_spine_path" jdbcType="VARCHAR" />
+            <result column="q_form_position" property="q_form_position" jdbcType="VARCHAR" />
+            <result column="q_form_layer" property="q_form_layer" jdbcType="INTEGER" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="bean">
+        select * from q_main_build
+    </select>
+</mapper>

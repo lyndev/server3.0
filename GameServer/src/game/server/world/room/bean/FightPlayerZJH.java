@@ -17,6 +17,7 @@ public class FightPlayerZJH extends FightPlayerBase
     
     public int m_cellSocre = 0;
     private boolean m_isLookCard = false;
+    private boolean followForever = false;
     
     // 玩家动作计时器
     private class ActionTimer extends TimerEvent
@@ -61,4 +62,14 @@ public class FightPlayerZJH extends FightPlayerBase
         return this.m_isLookCard;
     }
 
+    public boolean isFollowForever()
+    {
+        return followForever;
+    }
+
+    public void setFollowForever(boolean followForever)
+    {
+        this.followForever = followForever;
+    }
+     
 }

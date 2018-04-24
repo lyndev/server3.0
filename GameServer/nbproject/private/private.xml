@@ -7,15 +7,6 @@
             <file>file:/G:/server/trunkServer3.0/GameServer/src/game/server/thread/dboperator/GameDBOperator.java</file>
             <file>file:/G:/server/trunkServer3.0/GameServer/src/game/server/world/room/RoomManager.java</file>
         </group>
-        <group name="GameServerGroup">
-            <file>file:/D:/github/common_java_server/GameServer/config/messages.xml</file>
-            <file>file:/D:/github/common_java_server/GameServer/src/game/server/world/room/bean/Room.java</file>
-            <file>file:/D:/github/common_java_server/GameServer/src/game/server/GameServer.java</file>
-            <file>file:/D:/github/common_java_server/GameServer/src/game/server/world/room/bean/ZJHRoom.java</file>
-            <file>file:/D:/github/common_java_server/GameServer/nbproject/build-impl.xml</file>
-            <file>file:/D:/github/common_java_server/GameServer/src/game/server/world/room/RoomManager.java</file>
-            <file>file:/D:/github/common_java_server/GameServer/src/game/server/http/GameHttpServer.java</file>
-            <file>file:/D:/github/common_java_server/GameServer/config/server-config.xml</file>
-        </group>
+        <group name="GameServerGroup"/>
     </open-files>
 </project-private>

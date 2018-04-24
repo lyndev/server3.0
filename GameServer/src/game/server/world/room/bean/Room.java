@@ -161,6 +161,7 @@ public class Room implements IJsonConverter
         A_WAIT_COMPARE("等待比牌", 15),
         A_THINKING("思考中", 16),
         A_FOLLOW_SCORE("跟注", 17),
+        A_FOLLOW_SCORE_FOREVER("跟到底", 18),
         A_ONLINE("上线", 100),
         A_OFFLINE("下线", 101);
 

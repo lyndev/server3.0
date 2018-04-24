@@ -44,6 +44,7 @@ public class ZJHRoom extends Room
     // 桌面状态
     public final int GS_FREE = 1;           // 空闲
     public final int GS_PLAYING = 2;        // 对局状态
+    public int m_playTimes = 0;
 
     //游戏状态
     public final int GS_T_FREE = 1;         // 等待开始
@@ -96,6 +97,7 @@ public class ZJHRoom extends Room
 
     private ScheduledFuture m_actionTimerFuture;
     private ScheduledFuture m_actionDelayStart;
+    private ScheduledFuture m_actionDelayFollowScore;
     private int m_winnerLocation = -1;                                          // 赢家的位置索引
 
     // 动作循环计时器
@@ -134,6 +136,24 @@ public class ZJHRoom extends Room
         }
     }
 
+    private final class SpeakerFollowScoreActionTimer extends TimerEvent
+    {
+        private final ICommand command;
+
+        public SpeakerFollowScoreActionTimer(long interval, ICommand command)
+        {
+
+            super(interval * 1000);
+            this.command = command;
+        }
+
+        @Override
+        public void run()
+        {
+            this.command.action();
+        }
+    }
+        
     // 结束原因
     public enum GameEndReasonType
     {
@@ -239,6 +259,7 @@ public class ZJHRoom extends Room
         m_iCurrentUserIndex = INVALID_CHAIR;
         m_lCompareCount = 0;
         m_handUp = 0;
+        this.m_playTimes = 0;
 
         // 下注信息
         m_lMaxCellScore = 0;
@@ -398,6 +419,29 @@ public class ZJHRoom extends Room
         this.m_actionDelayStart = SimpleTimerProcessor.getInstance().addEvent(_actionTimer);
     }
 
+    public void createActionFollowScore(final int index, long delayTime)
+    {
+        ICommand _actionCommand = new ICommand()
+        {
+            @Override
+            public void action()
+            {
+                delayFollowScore(index);
+            }
+        };
+
+        SpeakerFollowScoreActionTimer _actionTimer = new SpeakerFollowScoreActionTimer(delayTime, _actionCommand);
+        this.m_actionDelayFollowScore = SimpleTimerProcessor.getInstance().addEvent(_actionTimer);
+    }
+    
+    public void cancelActionFollowScoreTimer()
+    {
+        if (this.m_actionDelayFollowScore != null)
+        {
+            this.m_actionDelayFollowScore.cancel(true);
+        }
+    }
+        
     public void cancelActionTimer()
     {
         if (this.m_actionTimerFuture != null)
@@ -423,7 +467,8 @@ public class ZJHRoom extends Room
             logger.error("speaker player is nul, indexl:" + index);
             return;
         }
-
+        
+        
         // 发送消息
         RoomMessage.Action.Builder resMsg = RoomMessage.Action.newBuilder();
         resMsg.setActionType(ActionType.A_THINKING.getIndex());
@@ -432,6 +477,23 @@ public class ZJHRoom extends Room
 
         // 增加一个计时器
         this.createActionTimer();
+        
+        // 玩家是否跟到底
+        boolean _bFollowForever = _bankerPlayer.isFollowForever();
+        if(_bFollowForever){
+           this.createActionFollowScore(index, 2);
+        }
+    }
+    
+    public void delayFollowScore(int index){
+        FightPlayerZJH _curPlayer = (FightPlayerZJH) this.getFightPlayerByIndex(index);
+        if (_curPlayer == null)
+        {
+            logger.error("speaker player is nul, indexl:" + index);
+            return;
+        }  
+        this.OnUserActionScore(_curPlayer.getRoleId(), 0, 2);
+        this.nextplayerSpeekAction(0);
     }
 
     // 下一位说话
@@ -439,12 +501,15 @@ public class ZJHRoom extends Room
     {
         int _nextSpeekIndex = this.getNextSpeekIndex();
         this.m_iCurrentUserIndex = _nextSpeekIndex;
-        if(delayTime == 0){
+        if (delayTime == 0)
+        {
             playerSpeekAction(_nextSpeekIndex);
-        } else {
+        }
+        else
+        {
             this.createActionDelayStart(_nextSpeekIndex, delayTime);
         }
-        
+
     }
 
     // 获取当前说话的玩家
@@ -557,25 +622,26 @@ public class ZJHRoom extends Room
         RoomMessage.Action _action = reqMsg.getActions();
         ActionType _actionType = ActionType.getTypeByValue(_action.getActionType());
         String _actionPlayerId = _action.getPlayerId();
-        FightPlayerBase _player = this.getFightPlayer(UniqueId.toBase10(_actionPlayerId));
-        
+        Long  _playerId = UniqueId.toBase10(_actionPlayerId);
+        FightPlayerBase _player = this.getFightPlayer(_playerId);
+
         if (_player == null)
         {
             logger.info("excute action fail , not find this player：" + _actionPlayerId);
             return false;
         }
-        
+
         Room.State _roomState = this.getState();
         if (_roomState == Room.State.FIGHT)
         {
             int _actionSpeakPlayerLocation = _player.getLocation();
-            if(_actionSpeakPlayerLocation != this.m_iCurrentUserIndex){
+            if (_actionSpeakPlayerLocation != this.m_iCurrentUserIndex)
+            {
                 logger.info("not speaker action handler invalid：" + _actionSpeakPlayerLocation);
                 return false;
             }
         }
-        
-       
+
         switch (_actionType)
         {
             case A_READY:           // 准备
@@ -603,11 +669,11 @@ public class ZJHRoom extends Room
             case A_GIVE_UP:         //用户放弃(弃牌) 玩家超时自动弃牌
             {
                 //消息处理
-                return this.OnUserGiveUp(UniqueId.toBase10(_actionPlayerId));
+                return this.OnUserGiveUp(_playerId);
             }
             case A_LOOK_CARD:       //用户看牌
                 //消息处理
-                return this.OnUserLookCard(UniqueId.toBase10(_actionPlayerId));
+                return this.OnUserLookCard(_playerId);
             case A_OPEN_CARD:       //用户开牌
             {
 
@@ -628,28 +694,38 @@ public class ZJHRoom extends Room
                 this.cancelActionTimer();
 
                 //消息处理
-                return this.OnUserCompareCard(UniqueId.toBase10(_actionPlayerId), _targetPlayerId);
+                return this.OnUserCompareCard(_playerId, _targetPlayerId);
             }
             case A_ADD_SCORE:       // 用户加注
             {
                 //消息处理
                 RoomMessage.ZJH_AddScore _addScoreData = _action.getZjhAddScore();
-                if(_addScoreData == null){
+                if (_addScoreData == null)
+                {
                     logger.error("add score data is null");
                     return false;
                 }
                 int _addScore = _addScoreData.getAddScoreCount();
-                return this.OnUserActionScore(UniqueId.toBase10(_actionPlayerId), _addScore, 1);
+                this.OnUserActionScore(_playerId, _addScore, 1);
+                this.nextplayerSpeekAction(0);
+                return true;
             }
             case A_FOLLOW_SCORE:    // 玩家跟注
             {
-                return this.OnUserActionScore(UniqueId.toBase10(_actionPlayerId), 0, 1);
+                this.OnUserActionScore(_playerId, 0, 2);
+                this.nextplayerSpeekAction(0);
+                return true;
             }
             case A_WAIT_COMPARE:    //等待比牌
             {
                 //用户效验
                 //状态判断
                 //消息处理
+                return true;
+            }
+            case A_FOLLOW_SCORE_FOREVER: // 跟注到底
+            {   
+                this.OnUserActionFollowForever(_playerId, _action.getZjhFollowForever());
                 return true;
             }
         }
@@ -828,7 +904,7 @@ public class ZJHRoom extends Room
         {
             return false;
         }
-        
+
         m_bMingZhu[_player.getLocation()] = true;
 
         //发送数据            
@@ -967,30 +1043,63 @@ public class ZJHRoom extends Room
         //结束游戏
         return true;
     }
+    
+    // 跟到底
+    boolean OnUserActionFollowForever(Long playerId, boolean bFollow){
+        FightPlayerZJH _fightPlayer = (FightPlayerZJH) this.getFightPlayer(playerId);
+        if (_fightPlayer == null)
+        {
+            logger.error("not find player");
+            return false;
+        }
+       
+        
+        int _curIndex = this.getCurrentSpeekIndex();
+        int _myLocation = _fightPlayer.getLocation();
+        
+        if(_curIndex == _myLocation){
+            // 如果当前该我说话，则自动跟注
+            if(bFollow ){
+                this.OnUserActionScore(_fightPlayer.getRoleId(), 0, 2);
+                this.nextplayerSpeekAction(0);
+            } else {
+                // 如果我在自动跟注，那么取消自动跟注，进入手动跟注模式
+                if(_fightPlayer.isFollowForever()){
+                    logger.info("玩家取消了自动跟注：" + playerId);
+                    this.cancelActionFollowScoreTimer();
+                }
+            }
+        }
+        _fightPlayer.setFollowForever(bFollow);
+        
+        return true;
+    }
 
     //加注事件
     boolean OnUserActionScore(Long playerId, int addScore, int type)
     {
-        
+
         FightPlayerZJH _fightPlayer = (FightPlayerZJH) this.getFightPlayer(playerId);
-        if(_fightPlayer == null){
+        if (_fightPlayer == null)
+        {
             logger.error("not find player");
             return false;
         }
-        
+
         logger.info("add score type :" + type + "add score:" + addScore);
-        
+
         //当前倍数                 
-        if(addScore < this.m_lCellScore && type == 1){
+        if (addScore < this.m_lCellScore && type == 1)
+        {
             logger.error("client add score fail, < this.m_lCellScore");
             return false;
         }
-        
+
         // 重置单元下注倍数
         this.m_lCellScore = addScore;
-        
+
         int _willAddScore = this.getFollowScore(playerId, type, addScore);
-        
+
         //用户注金
         m_lTableScore[_fightPlayer.getLocation()] += _willAddScore;
 
@@ -1000,71 +1109,94 @@ public class ZJHRoom extends Room
         {
             _player.getBackpackManager().subResource(ResourceType.GOLD, -_willAddScore, m_bGameEnd, Reasons.ARENA_ATTACK, new Date());
         }
+
+        this.increasePlayTimes();
         
         // 发送加注成功
         RoomMessage.Action.Builder resMsg = RoomMessage.Action.newBuilder();
         RoomMessage.ZJH_AddScore.Builder _addScoreData = RoomMessage.ZJH_AddScore.newBuilder();
         _addScoreData.setAddScoreCount(_willAddScore);
+        _addScoreData.setCurrentCellScore(this.m_lCellScore);
+        _addScoreData.setCurrentTotalScore(this.getTotalTableScore());
+        _addScoreData.setCurrentPlayTimes(m_playTimes);
         resMsg.setActionType(Room.ActionType.A_FOLLOW_SCORE.getIndex());
         resMsg.setPlayerId(_fightPlayer.getStrRoleId());
         this.resActionResult(resMsg.build(), PlayerType.All, null);
-        
-        this.nextplayerSpeekAction(0);
-        
+
         return true;
     }
-
     
-    int getFollowScore(Long playerId, int type, int addScore){
-        
+    void increasePlayTimes(){
+        this.m_playTimes++;
+    }
+    
+    int getFollowScore(Long playerId, int type, int addScore)
+    {
+
         FightPlayerBase _player = this.getFightPlayer(playerId);
-        if(_player== null){
+        if (_player == null)
+        {
             logger.error("get player fail");
             return 0;
         }
-        
+
         // type = 1 加注，type = 2 跟注
         int _willAddScore = 0;
         boolean _bMyselfLookCard = this.m_bMingZhu[_player.getLocation()];
         boolean _bAllLookCard = this.isAllLookCard();
-        if(type == 1)
-            
+        if (type == 1)
+
             // 自己处于闷牌状态
-            if(!_bMyselfLookCard){
+            if (!_bMyselfLookCard)
+            {
                 _willAddScore = this.m_lCellScore;
-            
-            // 自己看牌了
-            } else {
-                if(_bAllLookCard){
-                    _willAddScore =  addScore;
-                } else {
+
+                // 自己看牌了
+            }
+            else
+            {
+                if (_bAllLookCard)
+                {
+                    _willAddScore = addScore;
+                }
+                else
+                {
                     float _isDoubleMultiple = addScore / this.m_lCellScore;
-                    if(_isDoubleMultiple >= 2){
+                    if (_isDoubleMultiple >= 2)
+                    {
                         _willAddScore = addScore;
-                    } else {
+                    }
+                    else
+                    {
                         _willAddScore = addScore * 2;
                     }
                 }
             }
-        else if(type == 2){
-            if(_bAllLookCard){
-                _willAddScore =  this.m_lCellScore * 2;
-            } else {
-                _willAddScore =  this.m_lCellScore;
+        else if (type == 2)
+        {
+            if (_bAllLookCard)
+            {
+                _willAddScore = this.m_lCellScore * 2;
+            }
+            else
+            {
+                _willAddScore = this.m_lCellScore;
             }
         }
         return _willAddScore;
     }
-    
+
     // 是不是所有人都看牌了
-    boolean isAllLookCard(){
+    boolean isAllLookCard()
+    {
         boolean _isAllLook = true;
         Map<Long, FightPlayerBase> fightPlayers = this.getRoomFightPlayers();
         for (Map.Entry<Long, FightPlayerBase> entry : fightPlayers.entrySet())
         {
-            FightPlayerBase _player =  entry.getValue();
+            FightPlayerBase _player = entry.getValue();
             int _locaiton = _player.getLocation();
-            if(!this.m_bMingZhu[_locaiton]){
+            if (!this.m_bMingZhu[_locaiton])
+            {
                 return false;
             }
         }
@@ -1111,14 +1243,20 @@ public class ZJHRoom extends Room
         super.ResetRoom();
     }
 
-    public void GameOver()
+    public int getTotalTableScore()
     {
-        // 赢家赢取的积分或者金币
         int lWinnerScore = 0;
         for (int i = 0; i < GAME_PLAYER; i++)
         {
             lWinnerScore += m_lTableScore[i];
         }
+        return lWinnerScore;
+    }
+
+    public void GameOver()
+    {
+        // 赢家赢取的积分或者金币
+        int lWinnerScore = this.getTotalTableScore();
 
         // TODO:税收处理
         RoomMessage.ZJH_GameResult.Builder game_result = RoomMessage.ZJH_GameResult.newBuilder();

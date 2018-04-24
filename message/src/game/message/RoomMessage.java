@@ -7256,6 +7256,60 @@ public final class RoomMessage {
      * </pre>
      */
     int getCurrentTimes();
+
+    // optional int32 currentCellScore = 6;
+    /**
+     * <code>optional int32 currentCellScore = 6;</code>
+     *
+     * <pre>
+     * 当前桌面单元注
+     * </pre>
+     */
+    boolean hasCurrentCellScore();
+    /**
+     * <code>optional int32 currentCellScore = 6;</code>
+     *
+     * <pre>
+     * 当前桌面单元注
+     * </pre>
+     */
+    int getCurrentCellScore();
+
+    // optional int32 currentTotalScore = 7;
+    /**
+     * <code>optional int32 currentTotalScore = 7;</code>
+     *
+     * <pre>
+     * 当前桌面总注
+     * </pre>
+     */
+    boolean hasCurrentTotalScore();
+    /**
+     * <code>optional int32 currentTotalScore = 7;</code>
+     *
+     * <pre>
+     * 当前桌面总注
+     * </pre>
+     */
+    int getCurrentTotalScore();
+
+    // optional int32 currentPlayTimes = 8;
+    /**
+     * <code>optional int32 currentPlayTimes = 8;</code>
+     *
+     * <pre>
+     * 当前轮数
+     * </pre>
+     */
+    boolean hasCurrentPlayTimes();
+    /**
+     * <code>optional int32 currentPlayTimes = 8;</code>
+     *
+     * <pre>
+     * 当前轮数
+     * </pre>
+     */
+    int getCurrentPlayTimes();
   }
   /**
    * Protobuf type {@code Room.ZJH_AddScore}
@@ -7321,6 +7375,21 @@ public final class RoomMessage {
             case 40: {
               bitField0_ |= 0x00000004;
               currentTimes_ = input.readInt32();
+              break;
+            }
+            case 48: {
+              bitField0_ |= 0x00000008;
+              currentCellScore_ = input.readInt32();
+              break;
+            }
+            case 56: {
+              bitField0_ |= 0x00000010;
+              currentTotalScore_ = input.readInt32();
+              break;
+            }
+            case 64: {
+              bitField0_ |= 0x00000020;
+              currentPlayTimes_ = input.readInt32();
               break;
             }
           }
@@ -7435,10 +7504,85 @@ public final class RoomMessage {
       return currentTimes_;
     }
 
+    // optional int32 currentCellScore = 6;
+    public static final int CURRENTCELLSCORE_FIELD_NUMBER = 6;
+    private int currentCellScore_;
+    /**
+     * <code>optional int32 currentCellScore = 6;</code>
+     *
+     * <pre>
+     * 当前桌面单元注
+     * </pre>
+     */
+    public boolean hasCurrentCellScore() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional int32 currentCellScore = 6;</code>
+     *
+     * <pre>
+     * 当前桌面单元注
+     * </pre>
+     */
+    public int getCurrentCellScore() {
+      return currentCellScore_;
+    }
+
+    // optional int32 currentTotalScore = 7;
+    public static final int CURRENTTOTALSCORE_FIELD_NUMBER = 7;
+    private int currentTotalScore_;
+    /**
+     * <code>optional int32 currentTotalScore = 7;</code>
+     *
+     * <pre>
+     * 当前桌面总注
+     * </pre>
+     */
+    public boolean hasCurrentTotalScore() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional int32 currentTotalScore = 7;</code>
+     *
+     * <pre>
+     * 当前桌面总注
+     * </pre>
+     */
+    public int getCurrentTotalScore() {
+      return currentTotalScore_;
+    }
+
+    // optional int32 currentPlayTimes = 8;
+    public static final int CURRENTPLAYTIMES_FIELD_NUMBER = 8;
+    private int currentPlayTimes_;
+    /**
+     * <code>optional int32 currentPlayTimes = 8;</code>
+     *
+     * <pre>
+     * 当前轮数
+     * </pre>
+     */
+    public boolean hasCurrentPlayTimes() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional int32 currentPlayTimes = 8;</code>
+     *
+     * <pre>
+     * 当前轮数
+     * </pre>
+     */
+    public int getCurrentPlayTimes() {
+      return currentPlayTimes_;
+    }
+
     private void initFields() {
       compareState_ = 0;
       addScoreCount_ = 0;
       currentTimes_ = 0;
+      currentCellScore_ = 0;
+      currentTotalScore_ = 0;
+      currentPlayTimes_ = 0;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -7461,6 +7605,15 @@ public final class RoomMessage {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeInt32(5, currentTimes_);
       }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeInt32(6, currentCellScore_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeInt32(7, currentTotalScore_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeInt32(8, currentPlayTimes_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -7481,6 +7634,18 @@ public final class RoomMessage {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(5, currentTimes_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, currentCellScore_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(7, currentTotalScore_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(8, currentPlayTimes_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -7604,6 +7769,12 @@ public final class RoomMessage {
         bitField0_ = (bitField0_ & ~0x00000002);
         currentTimes_ = 0;
         bitField0_ = (bitField0_ & ~0x00000004);
+        currentCellScore_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        currentTotalScore_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        currentPlayTimes_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -7644,6 +7815,18 @@ public final class RoomMessage {
           to_bitField0_ |= 0x00000004;
         }
         result.currentTimes_ = currentTimes_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.currentCellScore_ = currentCellScore_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.currentTotalScore_ = currentTotalScore_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.currentPlayTimes_ = currentPlayTimes_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -7668,6 +7851,15 @@ public final class RoomMessage {
         }
         if (other.hasCurrentTimes()) {
           setCurrentTimes(other.getCurrentTimes());
+        }
+        if (other.hasCurrentCellScore()) {
+          setCurrentCellScore(other.getCurrentCellScore());
+        }
+        if (other.hasCurrentTotalScore()) {
+          setCurrentTotalScore(other.getCurrentTotalScore());
+        }
+        if (other.hasCurrentPlayTimes()) {
+          setCurrentPlayTimes(other.getCurrentPlayTimes());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -7839,6 +8031,153 @@ public final class RoomMessage {
       public Builder clearCurrentTimes() {
         bitField0_ = (bitField0_ & ~0x00000004);
         currentTimes_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // optional int32 currentCellScore = 6;
+      private int currentCellScore_ ;
+      /**
+       * <code>optional int32 currentCellScore = 6;</code>
+       *
+       * <pre>
+       * 当前桌面单元注
+       * </pre>
+       */
+      public boolean hasCurrentCellScore() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional int32 currentCellScore = 6;</code>
+       *
+       * <pre>
+       * 当前桌面单元注
+       * </pre>
+       */
+      public int getCurrentCellScore() {
+        return currentCellScore_;
+      }
+      /**
+       * <code>optional int32 currentCellScore = 6;</code>
+       *
+       * <pre>
+       * 当前桌面单元注
+       * </pre>
+       */
+      public Builder setCurrentCellScore(int value) {
+        bitField0_ |= 0x00000008;
+        currentCellScore_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 currentCellScore = 6;</code>
+       *
+       * <pre>
+       * 当前桌面单元注
+       * </pre>
+       */
+      public Builder clearCurrentCellScore() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        currentCellScore_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // optional int32 currentTotalScore = 7;
+      private int currentTotalScore_ ;
+      /**
+       * <code>optional int32 currentTotalScore = 7;</code>
+       *
+       * <pre>
+       * 当前桌面总注
+       * </pre>
+       */
+      public boolean hasCurrentTotalScore() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional int32 currentTotalScore = 7;</code>
+       *
+       * <pre>
+       * 当前桌面总注
+       * </pre>
+       */
+      public int getCurrentTotalScore() {
+        return currentTotalScore_;
+      }
+      /**
+       * <code>optional int32 currentTotalScore = 7;</code>
+       *
+       * <pre>
+       * 当前桌面总注
+       * </pre>
+       */
+      public Builder setCurrentTotalScore(int value) {
+        bitField0_ |= 0x00000010;
+        currentTotalScore_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 currentTotalScore = 7;</code>
+       *
+       * <pre>
+       * 当前桌面总注
+       * </pre>
+       */
+      public Builder clearCurrentTotalScore() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        currentTotalScore_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // optional int32 currentPlayTimes = 8;
+      private int currentPlayTimes_ ;
+      /**
+       * <code>optional int32 currentPlayTimes = 8;</code>
+       *
+       * <pre>
+       * 当前轮数
+       * </pre>
+       */
+      public boolean hasCurrentPlayTimes() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional int32 currentPlayTimes = 8;</code>
+       *
+       * <pre>
+       * 当前轮数
+       * </pre>
+       */
+      public int getCurrentPlayTimes() {
+        return currentPlayTimes_;
+      }
+      /**
+       * <code>optional int32 currentPlayTimes = 8;</code>
+       *
+       * <pre>
+       * 当前轮数
+       * </pre>
+       */
+      public Builder setCurrentPlayTimes(int value) {
+        bitField0_ |= 0x00000020;
+        currentPlayTimes_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 currentPlayTimes = 8;</code>
+       *
+       * <pre>
+       * 当前轮数
+       * </pre>
+       */
+      public Builder clearCurrentPlayTimes() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        currentPlayTimes_ = 0;
         onChanged();
         return this;
       }
@@ -9626,6 +9965,16 @@ public final class RoomMessage {
      * <code>optional .Room.ZJH_LookCard zjh_lookcard = 9;</code>
      */
     game.message.RoomMessage.ZJH_LookCardOrBuilder getZjhLookcardOrBuilder();
+
+    // optional bool zjh_followForever = 10;
+    /**
+     * <code>optional bool zjh_followForever = 10;</code>
+     */
+    boolean hasZjhFollowForever();
+    /**
+     * <code>optional bool zjh_followForever = 10;</code>
+     */
+    boolean getZjhFollowForever();
   }
   /**
    * Protobuf type {@code Room.Action}
@@ -9725,6 +10074,11 @@ public final class RoomMessage {
                 zjhLookcard_ = subBuilder.buildPartial();
               }
               bitField0_ |= 0x00000010;
+              break;
+            }
+            case 80: {
+              bitField0_ |= 0x00000020;
+              zjhFollowForever_ = input.readBool();
               break;
             }
           }
@@ -9892,12 +10246,29 @@ public final class RoomMessage {
       return zjhLookcard_;
     }
 
+    // optional bool zjh_followForever = 10;
+    public static final int ZJH_FOLLOWFOREVER_FIELD_NUMBER = 10;
+    private boolean zjhFollowForever_;
+    /**
+     * <code>optional bool zjh_followForever = 10;</code>
+     */
+    public boolean hasZjhFollowForever() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional bool zjh_followForever = 10;</code>
+     */
+    public boolean getZjhFollowForever() {
+      return zjhFollowForever_;
+    }
+
     private void initFields() {
       actionType_ = 0;
       playerId_ = "";
       zjhAddScore_ = game.message.RoomMessage.ZJH_AddScore.getDefaultInstance();
       zjhComparecard_ = game.message.RoomMessage.ZJH_CompareCard.getDefaultInstance();
       zjhLookcard_ = game.message.RoomMessage.ZJH_LookCard.getDefaultInstance();
+      zjhFollowForever_ = false;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -9925,6 +10296,9 @@ public final class RoomMessage {
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeMessage(9, zjhLookcard_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeBool(10, zjhFollowForever_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -9954,6 +10328,10 @@ public final class RoomMessage {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, zjhLookcard_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(10, zjhFollowForever_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -10096,6 +10474,8 @@ public final class RoomMessage {
           zjhLookcardBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000010);
+        zjhFollowForever_ = false;
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -10156,6 +10536,10 @@ public final class RoomMessage {
         } else {
           result.zjhLookcard_ = zjhLookcardBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.zjhFollowForever_ = zjhFollowForever_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -10188,6 +10572,9 @@ public final class RoomMessage {
         }
         if (other.hasZjhLookcard()) {
           mergeZjhLookcard(other.getZjhLookcard());
+        }
+        if (other.hasZjhFollowForever()) {
+          setZjhFollowForever(other.getZjhFollowForever());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -10672,6 +11059,39 @@ public final class RoomMessage {
           zjhLookcard_ = null;
         }
         return zjhLookcardBuilder_;
+      }
+
+      // optional bool zjh_followForever = 10;
+      private boolean zjhFollowForever_ ;
+      /**
+       * <code>optional bool zjh_followForever = 10;</code>
+       */
+      public boolean hasZjhFollowForever() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional bool zjh_followForever = 10;</code>
+       */
+      public boolean getZjhFollowForever() {
+        return zjhFollowForever_;
+      }
+      /**
+       * <code>optional bool zjh_followForever = 10;</code>
+       */
+      public Builder setZjhFollowForever(boolean value) {
+        bitField0_ |= 0x00000020;
+        zjhFollowForever_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool zjh_followForever = 10;</code>
+       */
+      public Builder clearZjhFollowForever() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        zjhFollowForever_ = false;
+        onChanged();
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:Room.Action)
@@ -20940,49 +21360,51 @@ public final class RoomMessage {
       "\005\022\020\n\010roomType\030\003 \001(\005\022\016\n\006bQuick\030\005 \001(\010\022\020\n\010g" +
       "ameType\030\007 \001(\005\"\025\n\005MsgID\022\014\n\006eMsgID\020\272\225\t\"G\n\014" +
       "ReqLeaveRoom\022 \n\010roomInfo\030\001 \001(\0132\016.Room.Ro" +
-      "omInfo\"\025\n\005MsgID\022\014\n\006eMsgID\020\273\225\t\"Q\n\014ZJH_Add" +
-      "Score\022\024\n\014compareState\030\001 \001(\005\022\025\n\raddScoreC" +
-      "ount\030\003 \001(\005\022\024\n\014currentTimes\030\005 \001(\005\"g\n\017ZJH_" +
+      "omInfo\"\025\n\005MsgID\022\014\n\006eMsgID\020\273\225\t\"\240\001\n\014ZJH_Ad" +
+      "dScore\022\024\n\014compareState\030\001 \001(\005\022\025\n\raddScore" +
+      "Count\030\003 \001(\005\022\024\n\014currentTimes\030\005 \001(\005\022\030\n\020cur" +
+      "rentCellScore\030\006 \001(\005\022\031\n\021currentTotalScore" +
+      "\030\007 \001(\005\022\030\n\020currentPlayTimes\030\010 \001(\005\"g\n\017ZJH_" +
       "CompareCard\022\027\n\017comparePlayerId\030\003 \001(\t\022\025\n\r" +
-      "compareResult\030\005 \001(\005\022\r\n\005cards\030\007 \003(\t\022\025\n\rco" +
+      "compareResult\030\005 \001(\005\022\r\n\005cards\030\007 \003(\t\022\025\n\rco",
       "mparedCards\030\t \003(\t\"\035\n\014ZJH_LookCard\022\r\n\005car" +
-      "ds\030\003 \003(\t\"\262\001\n\006Action\022\022\n\nactionType\030\001 \001(\005\022",
+      "ds\030\003 \003(\t\"\315\001\n\006Action\022\022\n\nactionType\030\001 \001(\005\022" +
       "\020\n\010playerId\030\003 \001(\t\022(\n\014zjh_addScore\030\005 \001(\0132" +
       "\022.Room.ZJH_AddScore\022.\n\017zjh_comparecard\030\007" +
       " \001(\0132\025.Room.ZJH_CompareCard\022(\n\014zjh_lookc" +
-      "ard\030\t \001(\0132\022.Room.ZJH_LookCard\"A\n\tReqActi" +
-      "on\022\035\n\007actions\030\001 \001(\0132\014.Room.Action\"\025\n\005Msg" +
-      "ID\022\014\n\006eMsgID\020\274\225\t\"\276\001\n\014ResEnterRoom\022 \n\010roo" +
-      "mInfo\030\001 \001(\0132\016.Room.RoomInfo\022\020\n\010playerId\030" +
-      "\003 \001(\t\022*\n\016playerBaseInfo\030\005 \001(\0132\022.Player.P" +
-      "layerInfo\022\025\n\rlocationIndex\030\007 \001(\005\022\016\n\006bRea" +
-      "dy\030\t \001(\010\022\020\n\010gameType\030\013 \001(\005\"\025\n\005MsgID\022\014\n\006e",
-      "MsgID\020\325\224\t\"7\n\014ResLeaveRoom\022\020\n\010playerId\030\003 " +
-      "\001(\t\"\025\n\005MsgID\022\014\n\006eMsgID\020\326\224\t\"@\n\tResAction\022" +
-      "\034\n\006action\030\001 \001(\0132\014.Room.Action\"\025\n\005MsgID\022\014" +
-      "\n\006eMsgID\020\327\224\t\"J\n\023ResWillExcuteAction\022\034\n\006a" +
-      "ction\030\001 \003(\0132\014.Room.Action\"\025\n\005MsgID\022\014\n\006eM" +
-      "sgID\020\330\224\t\"\220\001\n\013ZJHDeskData\022\020\n\010maxScore\030\001 \001" +
-      "(\005\022\021\n\tcellScore\030\002 \001(\005\022\024\n\014currentTimes\030\003 " +
-      "\001(\005\022\025\n\rmaxScoreLimit\030\004 \001(\005\022\026\n\016bankerPlay" +
-      "erId\030\005 \001(\t\022\027\n\017currentPlayerId\030\006 \001(\t\"8\n\rF" +
-      "ightDeskData\022\'\n\014zjh_DeskData\030\001 \001(\0132\021.Roo",
-      "m.ZJHDeskData\"F\n\022ZJHPlayerFightData\022\020\n\010p" +
-      "layerId\030\001 \001(\t\022\017\n\007isReady\030\003 \001(\010\022\r\n\005cards\030" +
-      "\006 \003(\t\"G\n\017PlayerFightData\0224\n\022zjhPlayerFig" +
-      "htData\030\001 \001(\0132\030.Room.ZJHPlayerFightData\"\257" +
-      "\001\n\016ZJH_GameResult\022\017\n\007gameTax\030\001 \001(\005\0223\n\npl" +
-      "ayerCard\030\003 \003(\0132\037.Room.ZJH_GameResult.Pla" +
-      "yerCard\022\026\n\016winnerLocation\030\004 \001(\005\032?\n\nPlaye" +
-      "rCard\022\020\n\010playerId\030\001 \001(\t\022\r\n\005cards\030\003 \003(\t\022\020" +
-      "\n\010getScore\030\005 \001(\005\"U\n\016ResFightResult\022,\n\016zj" +
-      "h_gameResult\030\001 \001(\0132\024.Room.ZJH_GameResult",
-      "\"\025\n\005MsgID\022\014\n\006eMsgID\020\331\224\t\"\236\001\n\025ResGameStart" +
-      "FightData\022.\n\017playerFightData\030\001 \003(\0132\025.Roo" +
-      "m.PlayerFightData\022*\n\rfightDeskData\030\003 \001(\013" +
-      "2\023.Room.FightDeskData\022\022\n\nfightState\030\005 \001(" +
-      "\005\"\025\n\005MsgID\022\014\n\006eMsgID\020\332\224\tB\033\n\014game.message" +
-      "B\013RoomMessage"
+      "ard\030\t \001(\0132\022.Room.ZJH_LookCard\022\031\n\021zjh_fol" +
+      "lowForever\030\n \001(\010\"A\n\tReqAction\022\035\n\007actions" +
+      "\030\001 \001(\0132\014.Room.Action\"\025\n\005MsgID\022\014\n\006eMsgID\020" +
+      "\274\225\t\"\276\001\n\014ResEnterRoom\022 \n\010roomInfo\030\001 \001(\0132\016" +
+      ".Room.RoomInfo\022\020\n\010playerId\030\003 \001(\t\022*\n\016play",
+      "erBaseInfo\030\005 \001(\0132\022.Player.PlayerInfo\022\025\n\r" +
+      "locationIndex\030\007 \001(\005\022\016\n\006bReady\030\t \001(\010\022\020\n\010g" +
+      "ameType\030\013 \001(\005\"\025\n\005MsgID\022\014\n\006eMsgID\020\325\224\t\"7\n\014" +
+      "ResLeaveRoom\022\020\n\010playerId\030\003 \001(\t\"\025\n\005MsgID\022" +
+      "\014\n\006eMsgID\020\326\224\t\"@\n\tResAction\022\034\n\006action\030\001 \001" +
+      "(\0132\014.Room.Action\"\025\n\005MsgID\022\014\n\006eMsgID\020\327\224\t\"" +
+      "J\n\023ResWillExcuteAction\022\034\n\006action\030\001 \003(\0132\014" +
+      ".Room.Action\"\025\n\005MsgID\022\014\n\006eMsgID\020\330\224\t\"\220\001\n\013" +
+      "ZJHDeskData\022\020\n\010maxScore\030\001 \001(\005\022\021\n\tcellSco" +
+      "re\030\002 \001(\005\022\024\n\014currentTimes\030\003 \001(\005\022\025\n\rmaxSco",
+      "reLimit\030\004 \001(\005\022\026\n\016bankerPlayerId\030\005 \001(\t\022\027\n" +
+      "\017currentPlayerId\030\006 \001(\t\"8\n\rFightDeskData\022" +
+      "\'\n\014zjh_DeskData\030\001 \001(\0132\021.Room.ZJHDeskData" +
+      "\"F\n\022ZJHPlayerFightData\022\020\n\010playerId\030\001 \001(\t" +
+      "\022\017\n\007isReady\030\003 \001(\010\022\r\n\005cards\030\006 \003(\t\"G\n\017Play" +
+      "erFightData\0224\n\022zjhPlayerFightData\030\001 \001(\0132" +
+      "\030.Room.ZJHPlayerFightData\"\257\001\n\016ZJH_GameRe" +
+      "sult\022\017\n\007gameTax\030\001 \001(\005\0223\n\nplayerCard\030\003 \003(" +
+      "\0132\037.Room.ZJH_GameResult.PlayerCard\022\026\n\016wi" +
+      "nnerLocation\030\004 \001(\005\032?\n\nPlayerCard\022\020\n\010play",
+      "erId\030\001 \001(\t\022\r\n\005cards\030\003 \003(\t\022\020\n\010getScore\030\005 " +
+      "\001(\005\"U\n\016ResFightResult\022,\n\016zjh_gameResult\030" +
+      "\001 \001(\0132\024.Room.ZJH_GameResult\"\025\n\005MsgID\022\014\n\006" +
+      "eMsgID\020\331\224\t\"\236\001\n\025ResGameStartFightData\022.\n\017" +
+      "playerFightData\030\001 \003(\0132\025.Room.PlayerFight" +
+      "Data\022*\n\rfightDeskData\030\003 \001(\0132\023.Room.Fight" +
+      "DeskData\022\022\n\nfightState\030\005 \001(\005\"\025\n\005MsgID\022\014\n" +
+      "\006eMsgID\020\332\224\tB\033\n\014game.messageB\013RoomMessage"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -21060,7 +21482,7 @@ public final class RoomMessage {
           internal_static_Room_ZJH_AddScore_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Room_ZJH_AddScore_descriptor,
-              new java.lang.String[] { "CompareState", "AddScoreCount", "CurrentTimes", });
+              new java.lang.String[] { "CompareState", "AddScoreCount", "CurrentTimes", "CurrentCellScore", "CurrentTotalScore", "CurrentPlayTimes", });
           internal_static_Room_ZJH_CompareCard_descriptor =
             getDescriptor().getMessageTypes().get(12);
           internal_static_Room_ZJH_CompareCard_fieldAccessorTable = new
@@ -21078,7 +21500,7 @@ public final class RoomMessage {
           internal_static_Room_Action_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Room_Action_descriptor,
-              new java.lang.String[] { "ActionType", "PlayerId", "ZjhAddScore", "ZjhComparecard", "ZjhLookcard", });
+              new java.lang.String[] { "ActionType", "PlayerId", "ZjhAddScore", "ZjhComparecard", "ZjhLookcard", "ZjhFollowForever", });
           internal_static_Room_ReqAction_descriptor =
             getDescriptor().getMessageTypes().get(15);
           internal_static_Room_ReqAction_fieldAccessorTable = new

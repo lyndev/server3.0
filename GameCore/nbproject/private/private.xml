@@ -5,9 +5,6 @@
         <group name="GameSever"/>
         <group name="GameServer"/>
         <group/>
-        <group name="GameServerGroup">
-            <file>file:/D:/github/common_java_server/GameCore/src/game/core/net/communication/CommunicationS.java</file>
-            <file>file:/D:/github/common_java_server/GameCore/src/game/core/timer/TimerEvent.java</file>
-        </group>
+        <group name="GameServerGroup"/>
     </open-files>
 </project-private>

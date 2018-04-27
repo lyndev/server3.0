@@ -5,6 +5,9 @@
         <group name="GameSever"/>
         <group name="GameServer"/>
         <group/>
-        <group name="GameServerGroup"/>
+        <group name="GameServerGroup">
+            <file>file:/D:/my-github/server3.0/GameCore/src/game/core/timer/SimpleTimerProcessor.java</file>
+            <file>file:/D:/my-github/server3.0/GameCore/src/game/core/timer/TimerProcessor.java</file>
+        </group>
     </open-files>
 </project-private>
